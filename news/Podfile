@@ -1,0 +1,3 @@
+platform :ios
+pod 'SwaggerClient', :git => 'https://github.com//.git'
+
