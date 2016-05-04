@@ -94,7 +94,7 @@
      * @param {String} opts.userId \u53D1\u8868\u8BC4\u8BBA\u7684\u4EBA\u7684id
      * @param {String} opts.userName \u53D1\u8868\u8BC4\u8BBA\u7684\u4EBA\u7684\u59D3\u540D
      * @param {String} opts.orderBy \u6839\u636E\u54EA\u4E00\u4E2A\u5B57\u6BB5\u8FDB\u884C\u6392\u5E8F\uFF1AcreateTime,floorNum\u7B49 (default to commentTime)
-     * @param {Integer} opts.limit \u4E00\u9875\u663E\u793A\u6570\u76EE\uFF0C\u5982\u679C\u4E0D\u4F20\u9ED8\u8BA4&#x3D;10 (default to 10)
+     * @param {Integer} opts.limit \u4E00\u9875\u663E\u793A\u6570\u76EE\uFF0C\u5982\u679C\u4E0D\u4F20\u9ED8\u8BA4=10 (default to 10)
      * @param {Boolean} opts.isAsc \u662F\u5426\u662F\u5347\u5E8F\uFF0C\u9ED8\u8BA4\u662F\u5347\u5E8F (default to false)
      * @param {module:api/VisitorApi~getCommentsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {Array.<module:model/Comment>}
@@ -196,7 +196,7 @@
      * @param {String} opts.authorName \u4F5C\u8005\u540D\u5B57
      * @param {String} opts.authorId \u4F5C\u8005id
      * @param {String} opts.orderBy \u6839\u636E\u54EA\u4E00\u4E2A\u5B57\u6BB5\u8FDB\u884C\u6392\u5E8F\uFF1AcreateTime,commentTime (default to commentTime)
-     * @param {Integer} opts.limit \u4E00\u9875\u663E\u793A\u6570\u76EE\uFF0C\u5982\u679C\u4E0D\u4F20\u9ED8\u8BA4&#x3D;10 (default to 10)
+     * @param {Integer} opts.limit \u4E00\u9875\u663E\u793A\u6570\u76EE\uFF0C\u5982\u679C\u4E0D\u4F20\u9ED8\u8BA4=10 (default to 10)
      * @param {Boolean} opts.isAsc \u662F\u5426\u662F\u5347\u5E8F\uFF0C\u9ED8\u8BA4\u662F\u5347\u5E8F (default to false)
      * @param {module:api/VisitorApi~getPostListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {Array.<module:model/Post>}
@@ -249,7 +249,7 @@
      * \u8FD4\u56DE\u70B9\u8D5E\u7684\u7528\u6237\u5217\u8868
      * @param {String} postId \u7528\u6237\u559C\u6B22\u7684PostId
      * @param {Object} opts Optional parameters
-     * @param {Integer} opts.limit \u4E00\u9875\u663E\u793A\u6570\u76EE\uFF0C\u5982\u679C\u4E0D\u4F20\u9ED8\u8BA4&#x3D;10 (default to 10)
+     * @param {Integer} opts.limit \u4E00\u9875\u663E\u793A\u6570\u76EE\uFF0C\u5982\u679C\u4E0D\u4F20\u9ED8\u8BA4=10 (default to 10)
      * @param {module:api/VisitorApi~likesUsersGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {Array.<module:model/User>}
      */

@@ -1,6 +1,6 @@
 # FootballWemediaApi.DeleteApi
 
-All URIs are relative to *http://192.168.50.103:8080/football/wemedia*
+All URIs are relative to *http://192.168.50.19:8080/football/wemedia*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 No authorization required
 
-### HTTP request headers
+### HTTP reuqest headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json

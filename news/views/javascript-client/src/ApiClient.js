@@ -31,9 +31,9 @@
     /**
      * The base URL against which to resolve every API call's (relative) path.
      * @type {String}
-     * @default http://192.168.50.103:8080/football/wemedia
+     * @default http://192.168.50.19:8080/football/wemedia
      */
-    this.basePath = 'http://192.168.50.103:8080/football/wemedia'.replace(/\/+$/, '');
+    this.basePath = 'http://192.168.50.19:8080/football/wemedia'.replace(/\/+$/, '');
 
     /**
      * The authentication methods to be included for all API calls.
@@ -41,6 +41,7 @@
      */
     this.authentications = {
     };
+
     /**
      * The default HTTP headers to be included for all API calls.
      * @type {Array.<String>}
@@ -347,7 +348,7 @@
 
     // set request timeout
     request.timeout(this.timeout);
-
+    // console.log(request);
     var contentType = this.jsonPreferredMime(contentTypes);
     if (contentType) {
       request.type(contentType);
@@ -384,6 +385,7 @@
         var data = null;
         if (!error) {
           data = _this.deserialize(response, returnType);
+          // console.log(data);
         }
         callback(error, data, response);
       }

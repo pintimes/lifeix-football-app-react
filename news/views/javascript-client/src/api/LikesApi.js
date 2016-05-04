@@ -97,7 +97,7 @@
      * \u8FD4\u56DE\u70B9\u8D5E\u7684\u7528\u6237\u5217\u8868
      * @param {String} userId \u7528\u6237\u7684userId
      * @param {Object} opts Optional parameters
-     * @param {Integer} opts.limit \u4E00\u9875\u663E\u793A\u6570\u76EE\uFF0C\u5982\u679C\u4E0D\u4F20\u9ED8\u8BA4&#x3D;10 (default to 10)
+     * @param {Integer} opts.limit \u4E00\u9875\u663E\u793A\u6570\u76EE\uFF0C\u5982\u679C\u4E0D\u4F20\u9ED8\u8BA4=10 (default to 10)
      * @param {module:api/LikesApi~likesPostsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {Array.<module:model/Post>}
      */
@@ -147,7 +147,7 @@
      * \u8FD4\u56DE\u70B9\u8D5E\u7684\u7528\u6237\u5217\u8868
      * @param {String} postId \u7528\u6237\u559C\u6B22\u7684PostId
      * @param {Object} opts Optional parameters
-     * @param {Integer} opts.limit \u4E00\u9875\u663E\u793A\u6570\u76EE\uFF0C\u5982\u679C\u4E0D\u4F20\u9ED8\u8BA4&#x3D;10 (default to 10)
+     * @param {Integer} opts.limit \u4E00\u9875\u663E\u793A\u6570\u76EE\uFF0C\u5982\u679C\u4E0D\u4F20\u9ED8\u8BA4=10 (default to 10)
      * @param {module:api/LikesApi~likesUsersGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {Array.<module:model/User>}
      */

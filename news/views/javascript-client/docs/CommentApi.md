@@ -1,6 +1,6 @@
 # FootballWemediaApi.CommentApi
 
-All URIs are relative to *http://192.168.50.103:8080/football/wemedia*
+All URIs are relative to *http://192.168.50.19:8080/football/wemedia*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 No authorization required
 
-### HTTP request headers
+### HTTP reuqest headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 
 No authorization required
 
-### HTTP request headers
+### HTTP reuqest headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -149,7 +149,7 @@ Name | Type | Description  | Notes
 
 No authorization required
 
-### HTTP request headers
+### HTTP reuqest headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
  **userId** | **String**| \u53D1\u8868\u8BC4\u8BBA\u7684\u4EBA\u7684id | [optional] 
  **userName** | **String**| \u53D1\u8868\u8BC4\u8BBA\u7684\u4EBA\u7684\u59D3\u540D | [optional] 
  **orderBy** | **String**| \u6839\u636E\u54EA\u4E00\u4E2A\u5B57\u6BB5\u8FDB\u884C\u6392\u5E8F\uFF1AcreateTime,floorNum\u7B49 | [optional] [default to commentTime]
- **limit** | **Integer**| \u4E00\u9875\u663E\u793A\u6570\u76EE\uFF0C\u5982\u679C\u4E0D\u4F20\u9ED8\u8BA4&#x3D;10 | [optional] [default to 10]
+ **limit** | **Integer**| \u4E00\u9875\u663E\u793A\u6570\u76EE\uFF0C\u5982\u679C\u4E0D\u4F20\u9ED8\u8BA4=10 | [optional] [default to 10]
  **isAsc** | **Boolean**| \u662F\u5426\u662F\u5347\u5E8F\uFF0C\u9ED8\u8BA4\u662F\u5347\u5E8F | [optional] [default to false]
 
 ### Return type
@@ -206,7 +206,7 @@ Name | Type | Description  | Notes
 
 No authorization required
 
-### HTTP request headers
+### HTTP reuqest headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json

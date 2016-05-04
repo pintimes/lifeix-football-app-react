@@ -17,8 +17,8 @@ import React, {
   TouchableOpacity
 } from'react-native';
 
-var PostCell = React.createClass({
 
+var PostCell = React.createClass({
   getInitialState: function() {
     var ds = new ListView.DataSource({
       rowHasChanged: (r1, r2) => r1 !== r2,
@@ -61,7 +61,7 @@ var PostCell = React.createClass({
 //     this.setState({
 //       show: false
 //     });
-//     fetch('http://192.168.50.56:8080/football/wemedia/posts?orderBy=commentTime&limit=10')
+//     fetch('http://192.168.50.19:8080/football/wemedia/posts?orderBy=commentTime&limit=10')
 //     .then(res => res.json())
 //     .then(res => this.updateDataSource(res))
 //     .catch((error) => {
@@ -74,21 +74,23 @@ var PostCell = React.createClass({
 //   })
 // },
 
+  _updateDataSource: function(data) {
+    // console.log("=====");
+    // this.setState({
+    //   dataSource: this.state.dataSource.cloneWithRows(data)
+    // })
+  },
+
   _getData: function() {
     var opts = null;
     var postsApi = new PostsApi();
-    postsApi.getPostList(opts, function(data) {
-      if(!data.length || !data) {
-        return alert('获取列表出错');
+    postsApi.getPostList(opts, function(error,data) {
+      if(!data) {
+        alert(error);
       }
-      console.log(data);
-      this.setState({
-        dataSource: ds.cloneWithRows(data),
-        show: true
-      });   
-    }, function(err) {
-      alert('err:' + err);
-    });
+      // console.log(this );
+      _updateDataSource(data); 
+    })
   },
 
   // 进入详情页

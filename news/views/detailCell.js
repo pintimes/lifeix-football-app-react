@@ -11,38 +11,43 @@ import React, {
 } from 'react-native';
 
 var DetailCell = React.createClass({
-  componentDidMount: function() {
-    // 请求数据
-    this._requireContent();  
+  getInitialState: function() {
+    this.state = {
+      id: null
+    }    
   },
-  _requireContent: function() {
-    fetch('http://192.168.50.56:8080/football/wemedia/posts/' + this.props.id)
-    .then(res => res.json())
-    .then(res => news = res)
-    .catch((error) => {
-      console.warn(error);
+  componentDidMount() {
+    this.setState({
+      id: this.props.id
     });
+    // 请求数据
+    this._requireContent();
   },
-  // updateNews: function(news) {
-  //   this.setState({
-  //     news = news;
-  //   })
-  // },
+   _requireContent: function() {
+    fetch('http://192.168.50.56:8080/football/wemedia/posts/' + id)
+    .then(function(response) {
+      return response.json()
+    }).then(function(json) {
+      console.log('parsed json', json)
+    }).catch(function(ex) {
+      console.log('parsing failed' + ex)
+    })
+  },
   render: function() {
     return (
       <View style={{flex:1}}>
         <View style={styles.single}>
           <View style = {styles.title}>
-            <Text style = {{fontWeight: 'blod'}}>{news.title}</Text>
+            <Text style = {{fontWeight: 'blod'}}>{json.title}</Text>
           </View>
           <View style = {styles.comlike}>
-            <Text>{'评论数：' + news.commentNum}</Text>   <Text>{'喜欢：' + news.likeNum}</Text>
+            <Text>{'评论数：' + json.commentNum}</Text>   <Text>{'喜欢：' + json.likeNum}</Text>
           </View>
           <View style = {styles.description}>
-            <Text>{news.description}</Text>
+            <Text>{json.description}</Text>
           </View>
           <ScrollView style = {styles.content}>
-            <Text>{news.content}</Text>
+            <Text>{json.content}</Text>
           </ScrollView>      
         </View>
       </View>
@@ -81,3 +86,4 @@ var styles = StyleSheet.create({
 });
 
 module.exports = DetailCell;
+
