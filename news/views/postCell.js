@@ -44,11 +44,11 @@ var PostCell = React.createClass({
   },
   // 渲染每一行 
   _renderRow: function(news) {
-    console.log('news:' + news);
+    console.log('====news:' + news);
     return (
-      <TouchableOpacity activeOpacity={0.4} onPress={()=>this._pressRow(news.id)}>
-        <Cell data= {news} />
+      <TouchableOpacity onPress={() => this._pressRow(news.id)}>
         <View style = {styles.separate}>
+          <Text>{news.id}</Text>
         </View>
       </TouchableOpacity>
     );
@@ -75,31 +75,33 @@ var PostCell = React.createClass({
 // },
 
   _updateDataSource: function(data) {
-    // console.log("=====");
-    // this.setState({
-    //   dataSource: this.state.dataSource.cloneWithRows(data)
-    // })
+
+    this.setState({
+      dataSource: this.state.dataSource.cloneWithRows(data)
+    })
   },
 
   _getData: function() {
     var opts = null;
     var postsApi = new PostsApi();
+    var that = this;
     postsApi.getPostList(opts, function(error,data) {
       if(!data) {
         alert(error);
       }
       // console.log(this );
-      _updateDataSource(data); 
+      that._updateDataSource(data); 
     })
   },
 
   // 进入详情页
   _pressRow: function(id) {
-    this.props.navigator.push({
-      component: DetailCell,
-      title: 'Detail',
-      passProps: id  
-    });  
+    alert(id);
+     this.props.navigator.push({
+       component: DetailCell,
+       title: 'Detail',
+       passProps: id  
+     });  
   }
 });
 
@@ -111,16 +113,9 @@ var styles =StyleSheet.create({
     backgroundColor: '#F6F6F6',
   },
   separate: {
-    height: 1,
+    height: 30,
     backgroundColor: '#ccc'
   }
 });
 
 module.exports = PostCell;
-
-
-
-
-
-
-
