@@ -8,19 +8,27 @@ import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
-  Text,
-  View
+  Navigator,
 } from 'react-native';
 
+import Welcome from './sources/view/welcome'
+
 class news extends Component {
+  constructor (props) {
+    super(props)
+  }
+
+
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to 中国足球网!
-        </Text>
-      </View>
-    );
+      <Navigator styles ={styles.container}
+        initialRoute={{
+          component: Welcome
+        }}
+        renderScene={(route, navigator) => { 
+          return <route.component navigator={navigator}/>
+        }}/>
+    )
   }
 }
 
@@ -29,13 +37,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#CE1126',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    color: '#FCD116',
-    bottom: 20,
+    //backgroundColor: '#CE1126',
   },
 });
 
