@@ -1,6 +1,7 @@
 //
 //  集成友盟统计推送.h
-//  
+//  umeng统计Appkey：5730424be0f55acd85001eef
+    umeng推送Appkey：
 //
 //  Created by Lifeix on 16/5/9.
 //

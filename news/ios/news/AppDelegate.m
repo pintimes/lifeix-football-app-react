@@ -10,11 +10,18 @@
 #import "AppDelegate.h"
 
 #import "RCTRootView.h"
+#import "AppDelegate+UMeng.h"
+#import "RCTUmengPush.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  //注册umeng统计
+  [self registerUMeng];
+  //注册友盟推送
+  [RCTUmengPush registerWithAppkey:@"your app key" launchOptions:launchOptions];
+  
   NSURL *jsCodeLocation;
 
   /**
@@ -54,6 +61,18 @@
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
   return YES;
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+  //获取deviceToken
+  [RCTUmengPush application:application didRegisterDeviceToken:deviceToken];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+  //获取远程推送消息
+  [RCTUmengPush application:application didReceiveRemoteNotification:userInfo];
 }
 
 @end

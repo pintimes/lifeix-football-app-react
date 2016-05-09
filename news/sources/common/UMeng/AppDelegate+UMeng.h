@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#define UmengAppkey @"your umeng key"
+#define UmengAppkey @"5730424be0f55acd85001eef"
 @interface AppDelegate (UMeng)
 -(void)registerUMeng;
 @end
