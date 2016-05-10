@@ -7,6 +7,7 @@ import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
+  Navigator,
   Text,
   View
 } from 'react-native';
