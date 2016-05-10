@@ -16,7 +16,7 @@
         android:minSdkVersion="16"
         android:targetSdkVersion="22" />
 
-    <application
+    <application android:name=".FootBallApplication"
       android:allowBackup="true"
       android:label="@string/app_name"
       android:icon="@mipmap/ic_launcher"
@@ -33,7 +33,14 @@
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
 
 
-
+        <meta-data
+                android:name="UMENG_APPKEY"
+                android:value="5731559667e58e02fb003d39" >
+        </meta-data>
+        <meta-data
+                android:name="UMENG_MESSAGE_SECRET"
+                android:value="1c5481d23da10731b8b9849edfe07a2b" >
+        </meta-data>
         <meta-data android:value="5731559667e58e02fb003d39" android:name="UMENG_APPKEY"></meta-data>
         <meta-data android:value="测试" android:name="UMENG_CHANNEL"/>
 
