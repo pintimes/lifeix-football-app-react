@@ -1,6 +1,6 @@
 /**.xcscheme
 .DS_Store
 **/*.lproj
-*.xib
+#*.xib
 *.iml
 *log
