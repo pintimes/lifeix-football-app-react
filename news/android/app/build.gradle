@@ -121,7 +121,10 @@ android {
     dexOptions {
         incremental = true;
         preDexLibraries = false
-        javaMaxHeapSize "2g" // 2g should be also OK
+        javaMaxHeapSize "4g"
+    }
+    lintOptions {
+        abortOnError false
     }
 }
 
@@ -130,6 +133,7 @@ dependencies {
     compile "com.android.support:appcompat-v7:23.0.1"
     compile "com.facebook.react:react-native:+"  // From node_modules
     compile 'com.umeng.analytics:analytics:latest.integration'
+    compile project(':PushSDK')
 }
 
 // Run this once to be able to run the application with BUCK
