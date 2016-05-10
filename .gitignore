@@ -3,3 +3,4 @@
 **/*.lproj
 *.xib
 *.iml
+*log

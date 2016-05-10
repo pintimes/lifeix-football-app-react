@@ -3,6 +3,7 @@ package com.news;
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
+import com.umeng.analytics.MobclickAgent;
 
 import java.util.Arrays;
 import java.util.List;
@@ -36,5 +37,17 @@ public class MainActivity extends ReactActivity {
         return Arrays.<ReactPackage>asList(
             new MainReactPackage()
         );
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MobclickAgent.onResume(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MobclickAgent.onPause(this);
     }
 }
