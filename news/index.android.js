@@ -10,22 +10,19 @@ import {
   Text,
   View
 } from 'react-native';
+import Welcome from './sources/view/welcome'
 
 class news extends Component {
   render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Shake or press menu button for dev menu
-        </Text>
-      </View>
-    );
+     return (
+        <Navigator styles ={styles.container}
+          initialRoute={{
+            component: Welcome
+          }}
+          renderScene={(route, navigator) => { 
+            return <route.component navigator={navigator}/>
+          }}/>
+      );
   }
 }
 

@@ -3,7 +3,8 @@
  * https://github.com/facebook/react-native
  * @flow
  */
-'use strict'
+ //忽略warning 
+ console.ignoredYellowBox = ['Warning: ReactNative.createElement'];
 
 import React from 'react';
 import {
@@ -18,7 +19,7 @@ import TabBar from 'react-native-xtabbar';
 class Home extends Component {
 
 	render() {
-		return this.runderTabbar();
+		return this.renderTabbar();
 	}
 
 	renderLoadingView() {
@@ -31,9 +32,9 @@ class Home extends Component {
     );
 	}
 
-  runderTabbar(){
+  renderTabbar(){
     return (
-      <TabBar style={styles.content}>
+      <TabBar style={styles.tabBar}>
           <TabBar.Item
               icon={require('../imgs/start_normal.png')}
               selectedIcon={require('../imgs/start_hightlight.png')}
@@ -76,11 +77,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#CE1126',
   },
-  title: {
-    fontSize: 20,
-    textAlign: 'center',
-    color: '#FCD116',
-    bottom: 20,
+  tabBar:{
+    backgroundColor: '#CE1126',
+  },
+  text: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'white',
   }
 });
 module.exports = Home
