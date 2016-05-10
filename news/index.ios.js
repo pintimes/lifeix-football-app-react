@@ -9,21 +9,17 @@ import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
-  Navigator,
-  NativeAppEventEmitter, 
-  NativeModules, 
-  DeviceEventEmitter, 
+  Navigator 
 } from 'react-native';
 
 import Welcome from './sources/view/welcome'
-import UmengPush from './sources/api/UMeng/UmengPush'
+
 
 class news extends Component {
   constructor (props) {
     super(props)
   }
-
-
+  
   render() {
     return (
       <Navigator styles ={styles.container}
@@ -34,18 +30,6 @@ class news extends Component {
           return <route.component navigator={navigator}/>
         }}/>
     )
-  }
-
-  componentDidMount() {
-    UmengPush.getDeviceToken(deviceToken => {
-      console.log(deviceToken);
-    });
-    UmengPush.didReceiveMessage(message => {
-      console.log("didReceiveMessage:", message);
-    });
-    UmengPush.didOpenMessage(message => {
-      console.log("didOpenMessage:", message);
-    });
   }
 }
 

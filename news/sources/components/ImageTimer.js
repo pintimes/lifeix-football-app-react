@@ -4,6 +4,7 @@
 2.数据接口：imgs 图片链接数组
 3.style: container 设置轮播图坐标
 4.timer: 设置定时器间隔
+5._onPressImg():图片点击方法
 **/
 var React = require('react-native');
 var TimerMixin = require('react-timer-mixin');
@@ -14,6 +15,7 @@ var {
   View,
   Image,
   ScrollView,
+  TouchableOpacity,
   StyleSheet
 } = React;
 
@@ -55,7 +57,7 @@ var ImageTimer = React.createClass({
           			onMomentumScrollEnd={this.onAnimationEnd}
           			onScrollEndDrag={this.onScrollEndDrag}
           			onScrollBeginDrag={this.onScrollBeginDrag}
-         		 >
+         		   >
               		{this._renderCycleImages()}
           		</ScrollView>
 
@@ -96,11 +98,13 @@ var ImageTimer = React.createClass({
   		var allImages = [];
   		for (var i = 0; i < imgs.length; i++) {
   			allImages.push(
-  				<Image
-  					key = {i}
-  					source = {{uri: imgs[i]}}
-  					style = {styles.imageStyle}
-  					/>
+          <TouchableOpacity onPress = {this._onPressImg()}>
+            <Image
+            key = {i}
+            source = {{uri: imgs[i]}}
+            style = {styles.imageStyle}
+            />
+          </TouchableOpacity>
   			);
   		}
   		return allImages;

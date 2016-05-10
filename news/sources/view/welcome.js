@@ -7,17 +7,22 @@
 
 import React from 'react';
 import {
-  StyleSheet,
+  	StyleSheet,
     View,
     Component,
     Animated,
     Easing,
     Image,
     Navigator,
-    Text
+    Text,
+    NativeAppEventEmitter, 
+  	NativeModules, 
+  	DeviceEventEmitter
 } from 'react-native';
 
 import Home from './home';
+import UmengPush from './sources/api/UMeng/UmengPush'
+
 class Welcome extends Component {
 	constructor(props) {
 	    super(props);  
@@ -27,6 +32,16 @@ class Welcome extends Component {
 	    };
 	}
 	componentDidMount() {
+    	UmengPush.getDeviceToken(deviceToken => {
+      		console.log(deviceToken);
+    	});
+    	UmengPush.didReceiveMessage(message => {
+      		console.log("didReceiveMessage:", message);
+    	});
+    	UmengPush.didOpenMessage(message => {
+     		 console.log("didOpenMessage:", message);
+    	});
+
         let timing = Animated.timing
 	    Animated.sequence([
 	      timing(this.state.fadeAnimLogo, {
