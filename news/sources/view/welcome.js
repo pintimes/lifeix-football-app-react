@@ -21,7 +21,7 @@ import {
 } from 'react-native';
 
 import Home from './home';
-import UmengPush from './sources/api/UMeng/UmengPush'
+import UmengPush from '../api/UMeng/UmengPush'
 
 class Welcome extends Component {
 	constructor(props) {
