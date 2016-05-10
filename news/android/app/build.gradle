@@ -117,6 +117,12 @@ android {
             }
         }
     }
+
+    dexOptions {
+        incremental = true;
+        preDexLibraries = false
+        javaMaxHeapSize "2g" // 2g should be also OK
+    }
 }
 
 dependencies {
