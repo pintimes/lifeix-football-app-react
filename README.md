@@ -21,3 +21,6 @@ rnpm install react-native-umeng-push
 接下来在项目根目录下运行 react-native bundle,此时会在项目下生成main.jsbundle文件。
 然后配置证书，通过Xcode编译打包，就可以得到一个离线的ipa包，安装在真机上即可离线运行App。
 ```
+
+#### Android Offline APK 
+`react-native bundle --platform android --dev false --entry-file index.android.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/`
