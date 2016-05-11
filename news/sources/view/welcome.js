@@ -36,10 +36,10 @@ class Welcome extends Component {
       		console.log("deviceToken======="+deviceToken);
     	});
     	UmengPush.didReceiveMessage(message => {
-      		console.log("didReceiveMessage:", message);
+      		console.log("didReceiveMessage====:", message);
     	});
     	UmengPush.didOpenMessage(message => {
-     		 console.log("didOpenMessage:", message);
+     		 console.log("didOpenMessage====:", message);
     	});
 
         let timing = Animated.timing
