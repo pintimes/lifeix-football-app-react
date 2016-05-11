@@ -13,3 +13,11 @@
 npm install rnpm -g 
 rnpm install react-native-umeng-push
 ```
+
+#### iOS生成离线包
+
+```
+在AppDelegate.m中，将jsCodeLocation = [NSURL URLWithString:@"http://localhost:8081/index.ios.bundle?platform=ios&dev=true"]注释掉。并且将jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"]注释去掉。
+接下来在项目根目录下运行 react-native bundle,此时会在项目下生成main.jsbundle文件。
+然后配置证书，通过Xcode编译打包，就可以得到一个离线的ipa包，安装在真机上即可离线运行App。
+```
