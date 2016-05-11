@@ -52,4 +52,6 @@ public class MainActivity extends ReactActivity {
         super.onResume();
         MobclickAgent.onPause(this);
     }
+
+
 }
