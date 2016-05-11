@@ -33,7 +33,7 @@ class Welcome extends Component {
 	}
 	componentDidMount() {
     	UmengPush.getDeviceToken(deviceToken => {
-      		console.log(deviceToken);
+      		console.log("deviceToken======="+deviceToken);
     	});
     	UmengPush.didReceiveMessage(message => {
       		console.log("didReceiveMessage:", message);

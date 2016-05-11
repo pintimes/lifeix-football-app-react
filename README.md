@@ -8,4 +8,7 @@
 
 -  友盟推送React-native <https://github.com/liuchungui/react-native-umeng-push>
 
-`rnpm install react-native-umeng-push`
+```
+#
+rnpm install react-native-umeng-push
+```

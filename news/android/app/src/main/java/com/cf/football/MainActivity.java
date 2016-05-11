@@ -1,6 +1,7 @@
 package com.cf.football;
 
 import com.facebook.react.ReactActivity;
+import com.liuchungui.react_native_umeng_push.UmengPushPackage;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.umeng.analytics.MobclickAgent;
@@ -35,7 +36,8 @@ public class MainActivity extends ReactActivity {
     @Override
     protected List<ReactPackage> getPackages() {
         return Arrays.<ReactPackage>asList(
-            new MainReactPackage()
+            new MainReactPackage(),
+            new UmengPushPackage()
         );
     }
 

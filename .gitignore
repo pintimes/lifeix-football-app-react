@@ -4,3 +4,4 @@
 #*.xib
 *.iml
 *log
+node_modules/
