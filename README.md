@@ -13,6 +13,7 @@
 npm install rnpm -g 
 rnpm install react-native-umeng-push
 ```
+<<<<<<< Updated upstream
 
 #### iOS生成离线包
 
@@ -24,3 +25,5 @@ rnpm install react-native-umeng-push
 
 #### Android Offline APK 
 `react-native bundle --platform android --dev false --entry-file index.android.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/`
+=======
+>>>>>>> Stashed changes
