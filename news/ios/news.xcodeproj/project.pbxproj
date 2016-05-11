@@ -26,10 +26,8 @@
 		EC8C555B1CE181F100FF1FBB /* UMengShare.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8C555A1CE181F100FF1FBB /* UMengShare.m */; };
 		ECEE04021CE0888D006E7031 /* AppDelegate+UMeng.m in Sources */ = {isa = PBXBuildFile; fileRef = ECEE03EF1CE0888D006E7031 /* AppDelegate+UMeng.m */; };
 		ECEE04031CE0888D006E7031 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECEE03F01CE0888D006E7031 /* libMobClickLibrary.a */; };
-		ECEE04041CE0888D006E7031 /* RCTUmengPush.m in Sources */ = {isa = PBXBuildFile; fileRef = ECEE03F41CE0888D006E7031 /* RCTUmengPush.m */; };
 		ECEE04051CE0888D006E7031 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECEE03F61CE0888D006E7031 /* libMobClickLibrary.a */; };
 		ECEE04061CE0888D006E7031 /* UMengManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ECEE03FE1CE0888D006E7031 /* UMengManager.m */; };
-		ECEE04071CE0888D006E7031 /* libUMessage_Sdk_1.2.6.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECEE04001CE0888D006E7031 /* libUMessage_Sdk_1.2.6.a */; };
 		ECEE04131CE088D1006E7031 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ECEE04121CE088D1006E7031 /* libz.tbd */; };
 		ECEE04661CE0B02C006E7031 /* UMSocialLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ECEE044C1CE0B02C006E7031 /* UMSocialLocalizable.strings */; };
 		ECEE04671CE0B02C006E7031 /* libUMSocial_Sdk_5.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECEE045A1CE0B02C006E7031 /* libUMSocial_Sdk_5.1.a */; };
@@ -177,15 +175,11 @@
 		ECEE03F01CE0888D006E7031 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
 		ECEE03F11CE0888D006E7031 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
 		ECEE03F21CE0888D006E7031 /* MobClickSocialAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClickSocialAnalytics.h; sourceTree = "<group>"; };
-		ECEE03F31CE0888D006E7031 /* RCTUmengPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTUmengPush.h; sourceTree = "<group>"; };
-		ECEE03F41CE0888D006E7031 /* RCTUmengPush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTUmengPush.m; sourceTree = "<group>"; };
 		ECEE03F61CE0888D006E7031 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
 		ECEE03F71CE0888D006E7031 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
 		ECEE03F81CE0888D006E7031 /* MobClickSocialAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClickSocialAnalytics.h; sourceTree = "<group>"; };
 		ECEE03FD1CE0888D006E7031 /* UMengManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMengManager.h; sourceTree = "<group>"; };
 		ECEE03FE1CE0888D006E7031 /* UMengManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMengManager.m; sourceTree = "<group>"; };
-		ECEE04001CE0888D006E7031 /* libUMessage_Sdk_1.2.6.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMessage_Sdk_1.2.6.a; sourceTree = "<group>"; };
-		ECEE04011CE0888D006E7031 /* UMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMessage.h; sourceTree = "<group>"; };
 		ECEE04121CE088D1006E7031 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		ECEE044D1CE0B02C006E7031 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/UMSocialLocalizable.strings; sourceTree = "<group>"; };
 		ECEE044F1CE0B02C006E7031 /* UMSocial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocial.h; sourceTree = "<group>"; };
@@ -267,7 +261,6 @@
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
 				ECEE04971CE0B0CC006E7031 /* libSocialSinaSSO.a in Frameworks */,
-				ECEE04071CE0888D006E7031 /* libUMessage_Sdk_1.2.6.a in Frameworks */,
 				ECEE049D1CE0B0CC006E7031 /* libSocialWechat.a in Frameworks */,
 				ECEE04981CE0B0CC006E7031 /* libWeiboSDK.a in Frameworks */,
 				00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */,
@@ -467,13 +460,10 @@
 				ECEE03F01CE0888D006E7031 /* libMobClickLibrary.a */,
 				ECEE03F11CE0888D006E7031 /* MobClick.h */,
 				ECEE03F21CE0888D006E7031 /* MobClickSocialAnalytics.h */,
-				ECEE03F31CE0888D006E7031 /* RCTUmengPush.h */,
-				ECEE03F41CE0888D006E7031 /* RCTUmengPush.m */,
 				ECEE03F51CE0888D006E7031 /* UMAnalytics_Sdk_3.6.5 */,
 				ECEE03F91CE0888D006E7031 /* UMengFeedback_SDK */,
 				ECEE03FD1CE0888D006E7031 /* UMengManager.h */,
 				ECEE03FE1CE0888D006E7031 /* UMengManager.m */,
-				ECEE03FF1CE0888D006E7031 /* UMessage_Sdk_1.2.6 */,
 				EC8C55591CE181F100FF1FBB /* UMengShare.h */,
 				EC8C555A1CE181F100FF1FBB /* UMengShare.m */,
 			);
@@ -520,15 +510,6 @@
 			children = (
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		ECEE03FF1CE0888D006E7031 /* UMessage_Sdk_1.2.6 */ = {
-			isa = PBXGroup;
-			children = (
-				ECEE04001CE0888D006E7031 /* libUMessage_Sdk_1.2.6.a */,
-				ECEE04011CE0888D006E7031 /* UMessage.h */,
-			);
-			path = UMessage_Sdk_1.2.6;
 			sourceTree = "<group>";
 		};
 		ECEE044B1CE0B02C006E7031 /* UMSocial_Sdk_5.1 */ = {
@@ -895,7 +876,6 @@
 				ECEE04021CE0888D006E7031 /* AppDelegate+UMeng.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				ECEE04061CE0888D006E7031 /* UMengManager.m in Sources */,
-				ECEE04041CE0888D006E7031 /* RCTUmengPush.m in Sources */,
 				EC8C555B1CE181F100FF1FBB /* UMengShare.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
