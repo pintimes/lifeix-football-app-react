@@ -19,17 +19,21 @@ console.ignoredYellowBox = ['Warning: bind(): React component methods may only b
 	tabBarInactiveTextColor(String) 
 	tabBarTextStyle(Object)  Example: {fontFamily: 'Roboto', fontSize: 15}
 **/
-var tabBarPosition = this.props.tabBarPosition; 
-var termList = this.props.termList;
-
+var termList;
 const ScrollableTab = React.createClass({
+
+  
+  getInitialState() {
+    //props 
+     termList= this.props.termList;
+    return null
+  },
   render() {
     return <View style={styles.container}>
-	     		 <ScrollableTabView initialPage={0} tabBarPosition={tabBarPosition} onChangeTab={this.props.clickTab.bind(this, selectedIndex) renderTabBar={() => <ScrollableTabBar />}>
-				 	for(var i = 0; i < termList; i++){
-				 		<View tabLabel=termList[i].term></View>
-				 	}      
-	      		 </ScrollableTabView>
+	     		 <ScrollableTabView initialPage={0} tabBarPosition="top" renderTabBar={() => <ScrollableTabBar />}>
+				 	       <Text tabLabel='Tab #1'>My</Text>
+        <Text tabLabel='Tab #2 word word'>favorite</Text>
+	      	</ScrollableTabView>
    		   </View>;
   }
 });

@@ -43,7 +43,6 @@ var data = [
 ];
 
 // ScrollableTab props
-var tabBarPosition = "top";
 var termList = [
   {term: "龙之队"},
   {term: "铿锵玫瑰"},
@@ -56,7 +55,7 @@ var HomePage = React.createClass({
   render() {
     return(
       <View style={styles.container}>
-            <ScrollableTab tabBarPosition = {tabBarPosition} termList = {termList}/>
+            <ScrollableTab termList = {termList} clickTab = {this.clickTab}/>
       </View>
     ); 
   },
@@ -81,7 +80,7 @@ var HomePage = React.createClass({
 
   renderOtherPage: function(selectedIndex) {
     return(
-      <Text>termList[selectedIndex].term<Text>
+      <Text>termList[selectedIndex].term</Text>
     )
   }
 
