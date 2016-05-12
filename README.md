@@ -6,6 +6,10 @@
 
 ~~ `npm install react-native-xtabbar --save` ~~
 
+~~ - react-native-scrollable-tab-view <https://github.com/skv-headless/react-native-scrollable-tab-view>  ~~
+
+~~ `npm install react-native-scrollable-tab-view --save` ~~
+
 -  友盟推送React-native <https://github.com/liuchungui/react-native-umeng-push>
 
 ```
@@ -33,5 +37,4 @@ change compileSdkVersion to 23
 
 #### Android Offline APK 
 `react-native bundle --platform android --dev false --entry-file index.android.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/`
-
 
