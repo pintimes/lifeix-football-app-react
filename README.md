@@ -1,10 +1,10 @@
-# -lifeix-football-app-react
+# lifeix-football-app-react
 
 #### 使用
 
--  React-native-tabbar <https://github.com/ngstyle/react-native-tabBar> 
+~~ - React-native-tabbar <https://github.com/ngstyle/react-native-tabBar>  ~~
 
-`npm install react-native-xtabbar --save`
+~~ `npm install react-native-xtabbar --save` ~~
 
 -  友盟推送React-native <https://github.com/liuchungui/react-native-umeng-push>
 
@@ -12,8 +12,16 @@
 # 需要先安装rnpm 
 npm install rnpm -g 
 rnpm install react-native-umeng-push
+
+ dependency project add config 
+ lintOptions {
+         abortOnError false
+ } 
+
+change compileSdkVersion to 23
+
 ```
-<<<<<<< Updated upstream
+
 
 #### iOS生成离线包
 
@@ -25,5 +33,5 @@ rnpm install react-native-umeng-push
 
 #### Android Offline APK 
 `react-native bundle --platform android --dev false --entry-file index.android.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/`
-=======
->>>>>>> Stashed changes
+
+
