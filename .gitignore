@@ -4,5 +4,6 @@
 #*.xib
 *.iml
 *log
+*.jsbundle
 *.bundle
 node_modules/
