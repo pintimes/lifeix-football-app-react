@@ -1,10 +1,12 @@
 # lifeix-football-app-react
 
-#### 使用
+####  Dependency 使用
 
 ~~- React-native-tabbar <https://github.com/ngstyle/react-native-tabBar>~~
+`~~npm install react-native-xtabbar --save ~~`
 
-~~`npm install react-native-xtabbar --save` ~~
+- react-native-navigation-bar <https://github.com/beefe/react-native-navigation-bar>
+`npm install react-native-navigation-bar --save`
 
 - react-native-scrollable-tab-view <https://github.com/skv-headless/react-native-scrollable-tab-view> 
 `npm install react-native-scrollable-tab-view --save`
@@ -16,7 +18,7 @@
 npm install rnpm -g 
 rnpm install react-native-umeng-push
 
- dependency project add config 
+ #Android dependency project add config 
  lintOptions {
          abortOnError false
  } 
@@ -24,7 +26,6 @@ rnpm install react-native-umeng-push
 change compileSdkVersion to 23
 
 ```
-
 
 #### iOS生成离线包
 

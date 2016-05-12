@@ -14,27 +14,51 @@ import {
     Text
 } from 'react-native';
 
-
+import NavigationBar from 'react-native-navigation-bar';
 class Home extends Component {
 
 	render() {
-		return this.renderTabbar();
+		return (
+                <View style={styles.container}>
+                    {this.renderNavigationBar()}
+                </View>
+              );
 	}
 
 	renderLoadingView() {
-    return (
-      <View style={styles.container}>
-	    <Text style={styles.title}>
-	      主页
-	    </Text>
-	  </View>
-    );
+            return (
+              <View style={styles.container}>
+        	    <Text style={styles.title}>
+        	      主页
+        	    </Text>
+        	  </View>
+            );
 	}
 
-  renderTabbar(){
-    return this.renderLoadingView();
+  renderNavigationBar(){
+    return (
+          <NavigationBar 
+              title={'中国足球网'}
+              height={30}
+              titleColor={'#FCD116'}
+              backgroundColor={'#CE1126'}
+              leftButtonIcon={require('../imgs/start_hightlight.png')}
+              //leftButtonTitle={'back'}
+              //leftButtonTitleColor={'#fff'}
+              onLeftButtonPress={this.onBackHandle} 
+              //rightButtonIcon={require('../imgs/start_hightlight.png')}
+              rightButtonTitle={'中国足球网'}
+              rightButtonTitleColor={'#CE1126'}
+              onRightButtonPress={this.onForwardHandle}
+          />
+      );
   }
+  onBackHandle(){
 
+  }
+  onForwardHandle(){
+
+  }
 }
 
 const styles = StyleSheet.create({
@@ -42,7 +66,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#CE1126',
+    //backgroundColor: '#CE1126',
   },
   tabBar:{
     backgroundColor: '#CE1126',
