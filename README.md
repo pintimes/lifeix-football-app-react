@@ -2,13 +2,12 @@
 
 #### 使用
 
-~~ - React-native-tabbar <https://github.com/ngstyle/react-native-tabBar>  ~~
+~~- React-native-tabbar <https://github.com/ngstyle/react-native-tabBar>~~
 
-~~ `npm install react-native-xtabbar --save` ~~
+~~`npm install react-native-xtabbar --save` ~~
 
-~~ - react-native-scrollable-tab-view <https://github.com/skv-headless/react-native-scrollable-tab-view>  ~~
-
-~~ `npm install react-native-scrollable-tab-view --save` ~~
+- react-native-scrollable-tab-view <https://github.com/skv-headless/react-native-scrollable-tab-view> 
+`npm install react-native-scrollable-tab-view --save`
 
 -  友盟推送React-native <https://github.com/liuchungui/react-native-umeng-push>
 
