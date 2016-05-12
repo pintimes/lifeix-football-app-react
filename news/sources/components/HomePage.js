@@ -55,17 +55,18 @@ var HomePage = React.createClass({
   render() {
     return(
       <View style={styles.container}>
-            <ScrollableTab termList = {termList} clickTab = {this.clickTab}/>
+            <ScrollableTab termList = {termList} onChangeTab = {this.onChangeTab}/>
       </View>
     ); 
   },
   
-  clickTab: function(selectedIndex) {
-    if(selectedIndex == 0){
-      this.renderHomePage;
-    }else {
-      this.renderOtherPage.bind(this, selectedIndex);
-    }
+  onChangeTab: function(i, ref) {
+    // if(tab.i == 0){
+    //   this.renderHomePage;
+    // }else {
+    //   this.renderOtherPage.bind(this, selectedIndex);
+    // }
+    console.log('onChangeTab' + i);
   },
 
   renderHomePage: function() {

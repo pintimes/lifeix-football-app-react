@@ -21,19 +21,23 @@ console.ignoredYellowBox = ['Warning: bind(): React component methods may only b
 **/
 var termList;
 const ScrollableTab = React.createClass({
-
-  
   getInitialState() {
     //props 
-     termList= this.props.termList;
+    termList= this.props.termList;
     return null
   },
   render() {
+    termList = this.props.termList;
     return <View style={styles.container}>
-	     		 <ScrollableTabView initialPage={0} tabBarPosition="top" renderTabBar={() => <ScrollableTabBar />}>
-				 	       <Text tabLabel='Tab #1'>My</Text>
-        <Text tabLabel='Tab #2 word word'>favorite</Text>
-	      	</ScrollableTabView>
+	     		 <ScrollableTabView initialPage={0} tabBarPosition="top" onChangeTab = {this.props.onChangeTab} renderTabBar={() => <ScrollableTabBar />}>
+                
+                {
+                  termList.map(function(item) {
+                    return (<View tabLabel = {item.term}></View>);
+                  })
+                }
+
+	      	 </ScrollableTabView>
    		   </View>;
   }
 });
