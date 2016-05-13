@@ -5,8 +5,8 @@ import {
   View,
   ScrollView,
 } from 'react-native';
-import ScrollableTabView, {ScrollableTabBar} from 'react-native-scrollable-tab-view';
-
+import ScrollableTabView, {DefaultTabBar,ScrollableTabBar} from 'react-native-scrollable-tab-view';
+import ScrollableFTTabBar from './ScrollableFTTabBar'
  //忽略warning 
 console.ignoredYellowBox = ['Warning: ReactNative.createElement'];
 console.ignoredYellowBox = ['Warning: bind(): React component methods may only be bound to the component instance. See ScrollableTab'];
@@ -28,24 +28,26 @@ const ScrollableTab = React.createClass({
   },
   render() {
     termList = this.props.termList;
-    return <View style={styles.container}>
-	     		 <ScrollableTabView initialPage={0} tabBarPosition="top" onChangeTab = {this.props.onChangeTab} renderTabBar={() => <ScrollableTabBar />}>
-                
-                {
-                  termList.map(function(item) {
-                    return (<View tabLabel = {item.term}></View>);
-                  })
-                }
-
-	      	 </ScrollableTabView>
-   		   </View>;
+    return (
+      <ScrollableTabView initialPage={0} tabBarPosition="top" onChangeTab = {this.props.onChangeTab} renderTabBar={()=>this.renderTabBar()}>
+                        {
+                            termList.map(function(item) {
+                              return (<View tabLabel = {item.term}></View>);
+                            })
+                        }
+      	 </ScrollableTabView>
+      );
+  },
+  renderTabBar(){
+      return (<ScrollableFTTabBar />)
   }
+
 });
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 30,
+    marginTop: 5,
   }
 });
 

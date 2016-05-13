@@ -48,16 +48,20 @@ var termList = [
   {term: "铿锵玫瑰"},
   {term: "球员之家"},
   {term: "教练员"},
-  {term: "裁判员"}
+  {term: "裁判员"},
+    {term: "裁判员3"},
+      {term: "裁判员2"},
+        {term: "裁判员1"},
+  {term: "裁判员4"},
+  {term: "test1"}
 ];
 
 var HomePage = React.createClass({
   render() {
     return(
-      <View style={styles.container}>
+      <View style={styles.scrollableTab}>
             <ScrollableTab termList = {termList} onChangeTab = {this.onChangeTab}/>
-      </View>
-    ); 
+     </View>); 
   },
   
   onChangeTab: function(i, ref) {
@@ -88,12 +92,10 @@ var HomePage = React.createClass({
 });
 
 var styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginTop: 30
-  },
-  ScrollableTab: {
-    height: 30
+
+  scrollableTab: {
+    height: 30,
+    marginTop:30
   },
   imgStyle: {
     width: width,

@@ -14,13 +14,18 @@ import {
     Text
 } from 'react-native';
 
+
+import HomePage from '../components/HomePage';
 import NavigationBar from 'react-native-navigation-bar';
+
+
 class Home extends Component {
 
 	render() {
 		return (
                 <View style={styles.container}>
                     {this.renderNavigationBar()}
+                    <HomePage />
                 </View>
               );
 	}
@@ -64,9 +69,6 @@ class Home extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    //backgroundColor: '#CE1126',
   },
   tabBar:{
     backgroundColor: '#CE1126',
