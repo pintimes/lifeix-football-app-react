@@ -3,6 +3,7 @@ import {
   StyleSheet,
   Text,
   View,
+  Platform,
   ScrollView,
 } from 'react-native';
 
@@ -101,7 +102,7 @@ var styles = StyleSheet.create({
 
   scrollableTab: {
     height: 30,
-    marginTop:30
+    marginTop:30+(Platform.OS === 'ios' ? 20 : 0)
   },
   imgStyle: {
     width: width,

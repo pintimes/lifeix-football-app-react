@@ -8,6 +8,8 @@
 - react-native-navigation-bar <https://github.com/beefe/react-native-navigation-bar>
 `npm install react-native-navigation-bar --save`
 
+> 也可以<https://github.com/react-native-fellowship/react-native-navbar>
+
 - react-native-scrollable-tab-view <https://github.com/skv-headless/react-native-scrollable-tab-view> 
 `npm install react-native-scrollable-tab-view --save`
 
