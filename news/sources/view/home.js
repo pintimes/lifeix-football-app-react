@@ -15,7 +15,8 @@ import {
 } from 'react-native';
 
 
-import HomePage from '../components/HomePage';
+import ScrollMenu from '../components/ScrollMenu';
+import Content from '../components/Content';
 import NavigationBar from 'react-native-navigation-bar';
 
 
@@ -25,7 +26,10 @@ class Home extends Component {
 		return (
                 <View style={styles.container}>
                     {this.renderNavigationBar()}
-                    <HomePage />
+                    <ScrollMenu/>
+                    <View>
+                      <Content />
+                    </View>
                 </View>
               );
 	}

@@ -1,20 +1,16 @@
 import React from 'react';
 import {
   StyleSheet,
+  Component,
   Text,
   View,
   Platform,
   ScrollView,
 } from 'react-native';
 
- //忽略warning 
-console.ignoredYellowBox = ['Warning: ReactNative.createElement'];
-console.ignoredYellowBox = ['Warning: bind(): React component methods may only be bound to the component instance. See ScrollableTab'];
-var ImageTimer = require('./ImageTimer');
 var Dimensions = require('Dimensions');
-var ScrollableTab = require('./ScrollableTab');
 var width = Dimensions.get('window').width;
-
+import ImageTimer from './ImageTimer';
 // 轮播图数据源
 var data = [
       {commentNum: 1,
@@ -43,75 +39,29 @@ var data = [
       }
 ];
 
-// ScrollableTab props
-var termList = [
-  {term: "龙之队"},
-  {term: "铿锵玫瑰"},
-  {term: "球员之家"},
-  {term: "教练员"},
-  {term: "裁判员"},
-    {term: "裁判员3"},
-      {term: "裁判员2"},
-        {term: "裁判员1"},
-  {term: "裁判员4"},
-  {term: "test1"}
-];
 
-var HomePage = React.createClass({
+
+class ScrollImages extends Component{
   render() {
     return(
-      <View>
-      <View style={styles.scrollableTab}>
-            <ScrollableTab termList = {termList} onChangeTab = {this.onChangeTab}/>
-     </View>
-    <View>
-          {this.renderHomePage()}
-    </View>
-     </View>
-     ); 
-  },
-  
-  onChangeTab: function(i, ref) {
-    // if(tab.i == 0){
-    //   this.renderHomePage;
-    // }else {
-    //   this.renderOtherPage.bind(this, selectedIndex);
-    // }
-    console.log('onChangeTab' + i);
-  },
-
-  renderHomePage: function() {
-    return(
       <ImageTimer imgStyle = {styles.imgStyle} data = {data} timer = {1500} click = {this.onPress}/>
-    );
-  },
 
-  onPress: function(post) {
-    alert(post);
-  },
-
-  renderOtherPage: function(selectedIndex) {
-    return(
-      <Text>termList[selectedIndex].term</Text>
-    )
+     ); 
   }
 
-});
+  onPress(post) {
+    alert(post);
+  }
+
+};
 
 var styles = StyleSheet.create({
 
-  scrollableTab: {
-    height: 30,
-    marginTop:30+(Platform.OS === 'ios' ? 20 : 0)
-  },
   imgStyle: {
     width: width,
     height: width * 0.5
-  },content: {
-    flex: 1,
-    //marginTop: 5,
   }
 });
 
-module.exports = HomePage;
+module.exports = ScrollImages;
 
