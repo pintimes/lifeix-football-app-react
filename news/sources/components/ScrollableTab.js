@@ -32,7 +32,7 @@ const ScrollableTab = React.createClass({
       <ScrollableTabView initialPage={0} tabBarPosition="top" onChangeTab = {this.props.onChangeTab} renderTabBar={()=>this.renderTabBar()}>
                         {
                             termList.map(function(item) {
-                              return (<View tabLabel = {item.term}></View>);
+                              return (<Text tabLabel = {item.term}></Text>);
                             })
                         }
       	 </ScrollableTabView>
@@ -47,7 +47,7 @@ const ScrollableTab = React.createClass({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 5,
+    //marginTop: 5,
   }
 });
 

@@ -59,9 +59,15 @@ var termList = [
 var HomePage = React.createClass({
   render() {
     return(
+      <View>
       <View style={styles.scrollableTab}>
             <ScrollableTab termList = {termList} onChangeTab = {this.onChangeTab}/>
-     </View>); 
+     </View>
+    <View>
+          {this.renderHomePage()}
+    </View>
+     </View>
+     ); 
   },
   
   onChangeTab: function(i, ref) {
@@ -100,6 +106,9 @@ var styles = StyleSheet.create({
   imgStyle: {
     width: width,
     height: width * 0.5
+  },content: {
+    flex: 1,
+    //marginTop: 5,
   }
 });
 
