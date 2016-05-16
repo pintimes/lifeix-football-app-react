@@ -9,27 +9,27 @@ import {
 
 var data = [
       {commentNum: 1,
-       imgs:["http://img.taopic.com/uploads/allimg/110906/1382-110Z611025585.jpg","http://img01.taopic.com/150920/240455-1509200H31810.jpg"],
+       imgs:["http://photo.l99.com/common/ab0/1459301431104_xdzd42.jpg","http://photo.l99.com/bigger/522/1459265462135_kvxz39.jpg"],
        title: "中国足球"
       },
       {commentNum: 1,
        imgs:
-         ["http://img6.faloo.com/picture/0x0/0/183/183379.jpg","http://www.taopic.com/uploads/allimg/120628/201776-12062Q4295216.jpg"],
+         ["http://photo.l99.com/bigger/508/1463227216968_pgik85.jpg","http://photo.l99.com/common/2e/1427099521414_6ak5rg.jpg"],
        title: "中国足球"
       },
       {commentNum: 1,
        imgs:
-        ["http://imgst-dl.meilishuo.net/pic/_o/84/a4/a30be77c4ca62cd87156da202faf_1440_900.jpg","http://img13.3lian.com/201312/04/a290524b9c59f165b8d8ac87f7a4c0bf.jpg"],
+        ["http://photo.l99.com/common/30/1394108924725_45gms8.jpg","http://photo.l99.com/common/31/1379550201457_1cb678.png"],
        title: "中国足球"
       },
       {commentNum: 1,
        imgs:
-         ["http://img.club.pchome.net/kdsarticle/2013/11small/21/fd548da909d64a988da20fa0ec124ef3_1000x750.jpg","http://img3.3lian.com/2013/v8/72/d/61.jpg"],
+         ["http://photo.l99.com/common/31/1371533509639_p3h709.jpg","http://photo.l99.com/common/03/1380015225428_h7dz1t.png"],
        title: "123"
       },
       {commentNum: 1,
        imgs:
-        ["http://pic13.nipic.com/20110325/2457331_082544259000_2.jpg","http://www.shifenkafei.com/data/upload/553deb1621af2.jpg"],
+        ["http://photo.l99.com/common/23/1343755872868_t7fnd5.png","http://photo.l99.com/common/22/1353890154186_nr5m4g.gif"],
        title: "123"
       }
 ];

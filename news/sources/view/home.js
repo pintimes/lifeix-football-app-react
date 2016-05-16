@@ -17,13 +17,20 @@ import {
 
 import ScrollMenu from '../components/ScrollMenu';
 import Content from '../components/Content';
+import Settings from './settings'
 import NavigationBar from 'react-native-navigation-bar';
-
+import SideMenu from 'react-native-side-menu'
 
 class Home extends Component {
-
+        state = {
+        isOpen: false,
+      };
 	render() {
+
+              const menu = <Settings />
 		return (
+                <SideMenu menu={menu} isOpen={this.state.isOpen}
+                    onChange={(isOpen) => this.updateMenuState(isOpen)}>
                 <View style={styles.container}>
                     {this.renderNavigationBar()}
                     <ScrollMenu/>
@@ -31,6 +38,7 @@ class Home extends Component {
                       <Content />
                     </View>
                 </View>
+                </SideMenu>
               );
 	}
 
@@ -54,7 +62,7 @@ class Home extends Component {
               leftButtonIcon={require('../imgs/start_hightlight.png')}
               //leftButtonTitle={'back'}
               //leftButtonTitleColor={'#fff'}
-              onLeftButtonPress={this.onBackHandle} 
+              onLeftButtonPress={()=>this.toggle()} 
               //rightButtonIcon={require('../imgs/start_hightlight.png')}
               rightButtonTitle={'中国足球网'}
               rightButtonTitleColor={'#CE1126'}
@@ -62,9 +70,14 @@ class Home extends Component {
           />
       );
   }
-  onBackHandle(){
-
+  toggle() {
+    this.setState({ isOpen:!this.state.isOpen});
   }
+
+  updateMenuState(isOpen) {
+    this.setState({ isOpen, });
+  }
+
   onForwardHandle(){
 
   }
@@ -73,6 +86,7 @@ class Home extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#fff'
   },
   tabBar:{
     backgroundColor: '#CE1126',
