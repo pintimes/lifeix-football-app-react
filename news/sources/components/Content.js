@@ -37,7 +37,15 @@ var data = [
 import ScrollImages from './ScrollImages';
 //头部滚动菜单
 class Content extends Component {
+
+        constructor(props) {
+          super(props);  
+          
+        }
+
 	render(){
+
+                console.log("content ------"+this.props);
 		return (
 			<ScrollImages data={data} />
 		);

@@ -31,11 +31,12 @@ class Home extends Component {
 		return (
                 <SideMenu menu={menu} isOpen={this.state.isOpen}
                     onChange={(isOpen) => this.updateMenuState(isOpen)}>
+                
                 <View style={styles.container}>
                     {this.renderNavigationBar()}
                     <ScrollMenu/>
                     <View>
-                      <Content />
+                      <Content navigator={this.navigator} />
                     </View>
                 </View>
                 </SideMenu>
@@ -64,14 +65,16 @@ class Home extends Component {
               //leftButtonTitleColor={'#fff'}
               onLeftButtonPress={()=>this.toggle()} 
               //rightButtonIcon={require('../imgs/start_hightlight.png')}
-              rightButtonTitle={'中国足球网'}
-              rightButtonTitleColor={'#CE1126'}
-              onRightButtonPress={this.onForwardHandle}
+              //rightButtonTitle={'中国足球网'}
+              //rightButtonTitleColor={'#CE1126'}
+              //onRightButtonPress={this.onForwardHandle}
           />
       );
   }
   toggle() {
     this.setState({ isOpen:!this.state.isOpen});
+
+
   }
 
   updateMenuState(isOpen) {
