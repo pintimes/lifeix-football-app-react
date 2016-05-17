@@ -11,6 +11,7 @@ import {
 var Dimensions = require('Dimensions');
 var width = Dimensions.get('window').width;
 import ImageTimer from './ImageTimer';
+
 // 轮播图数据源
 var data = null;
 class ScrollImages extends Component{
@@ -30,7 +31,7 @@ class ScrollImages extends Component{
   }
 
   onPress(post) {
-    alert(post);
+
   }
 
 };
