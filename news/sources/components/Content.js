@@ -39,7 +39,6 @@ var data = [
 
 import ScrollImages from './ScrollImages';
 //头部滚动菜单
-<<<<<<< HEAD
 var Content = React.createClass({
   
   getInitialState() {
@@ -91,21 +90,4 @@ var styles = StyleSheet.create({
 });
 
 module.exports = Content;
-=======
-class Content extends Component {
-
-        constructor(props) {
-          super(props);  
-          
-        }
-
-	render(){
-
-                console.log("content ------"+this.props);
-		return (
-			<ScrollImages data={data} />
-		);
-	}
-}
->>>>>>> origin/master
 
