@@ -5,6 +5,9 @@ import {
   View,
   Platform,
   ScrollView,
+  RefreshControl,
+  Dimensions,
+  ListView
 } from 'react-native';
 
 var data = [
@@ -36,12 +39,55 @@ var data = [
 
 import ScrollImages from './ScrollImages';
 //头部滚动菜单
-class Content extends Component {
-	render(){
-		return (
-			<ScrollImages data={data} />
-		);
-	}
-}
+var Content = React.createClass({
+  
+  getInitialState() {
+      var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+      return {
+        isRefreshing: false,
+        dataSource: ds.cloneWithRows(['news 1', 'news 2', '...']),
+      };
+    },
+  render(){
+    return (
+      <ScrollView contentContainerStyle = {styles.contentContainer} showsVerticalScrollIndicator = {false}
+        refreshControl={
+              <RefreshControl
+                refreshing={this.state.isRefreshing}
+                onRefresh={this._onRefresh}
+                // tintColor="#ff0000"
+                title="正在努力加载中..."
+                colors={['#ff0000', '#00ff00', '#0000ff']}
+                progressBackgroundColor="#ffff00"
+              />
+        }
+       >
+        <ListView
+          dataSource={this.state.dataSource}
+          renderRow={(rowData) => <Text>{rowData}</Text>}
+          renderHeader={()=> <ScrollImages data={data} />}
+        />
+
+      </ScrollView>
+    );
+  },
+  _onRefresh() {
+      this.setState({isRefreshing: true});
+      setTimeout(() => {
+        this.setState({
+          isRefreshing: false,
+        });
+      }, 2000);
+    }
+
+})
+
+var styles = StyleSheet.create({
+  contentContainer: {
+    height: Dimensions.get('window').height,
+    flexDirection: 'row'
+  }
+});
 
 module.exports = Content;
+
