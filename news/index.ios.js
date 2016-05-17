@@ -14,7 +14,7 @@ import {
 
 import Welcome from './sources/view/welcome'
 
-
+console.disableYellowBox=true;
 class news extends Component {
   constructor (props) {
     super(props)
