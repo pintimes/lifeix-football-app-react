@@ -6,9 +6,9 @@ import {
   View,
   Platform,
   ScrollView,
+  Dimensions,
 } from 'react-native';
 
-var Dimensions = require('Dimensions');
 var width = Dimensions.get('window').width;
 import ImageTimer from './ImageTimer';
 

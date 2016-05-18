@@ -45,7 +45,7 @@ var Content = React.createClass({
       var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
       return {
         isRefreshing: false,
-        dataSource: ds.cloneWithRows(['news 1', 'news 2', '...']),
+        dataSource: ds.cloneWithRows(data),
       };
     },
   render(){
@@ -64,10 +64,9 @@ var Content = React.createClass({
        >
         <ListView
           dataSource={this.state.dataSource}
-          renderRow={(rowData) => <Text>{rowData}</Text>}
+          renderRow={(rowData) => <Text>{rowData.title}</Text>}
           renderHeader={()=> <ScrollImages data={data} />}
         />
-
       </ScrollView>
     );
   },

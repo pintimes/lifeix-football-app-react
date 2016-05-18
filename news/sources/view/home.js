@@ -36,7 +36,7 @@ class Home extends Component {
                     {this.renderNavigationBar()}
                     <ScrollMenu/>
                     <View>
-                      <Content navigator={this.navigator} />
+                      <Content navigator={this.props.navigator} />
                     </View>
                 </View>
                 </SideMenu>

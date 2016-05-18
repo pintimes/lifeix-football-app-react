@@ -12,7 +12,7 @@ import {
   View
 } from 'react-native';
 import Welcome from './sources/view/welcome'
-
+console.disableYellowBox=true;
 class news extends Component {
   render() {
      return (
