@@ -27,7 +27,7 @@ class news extends Component {
           component: Welcome
         }}
         renderScene={(route, navigator) => { 
-          return <route.component navigator={navigator}/>
+          return <route.component {...route.params} navigator={navigator}/>
         }}/>
     )
   }

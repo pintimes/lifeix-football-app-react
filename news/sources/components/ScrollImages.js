@@ -11,15 +11,15 @@ import {
 
 var width = Dimensions.get('window').width;
 import ImageTimer from './ImageTimer';
+import Detail from '../view/detail'
 
 // 轮播图数据源
-var data = null;
+var data = null;var navigator ;
 class ScrollImages extends Component{
   constructor(props) {
     super(props);
     data = this.props.data;
-
-
+    navigator = this.props.navigator;
   }
 
 
@@ -31,7 +31,12 @@ class ScrollImages extends Component{
   }
 
   onPress(post) {
-
+    navigator.push({
+      component:Detail,
+      params:{
+        title:post.title
+      }
+    })
   }
 
 };

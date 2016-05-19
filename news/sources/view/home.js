@@ -25,6 +25,11 @@ class Home extends Component {
         state = {
         isOpen: false,
       };
+      constructor(props) {
+        super(props);
+      }
+
+
 	render() {
 
               const menu = <Settings />

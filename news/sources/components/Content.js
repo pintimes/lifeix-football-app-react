@@ -65,7 +65,7 @@ var Content = React.createClass({
         <ListView
           dataSource={this.state.dataSource}
           renderRow={(rowData) => <Text>{rowData.title}</Text>}
-          renderHeader={()=> <ScrollImages data={data} />}
+          renderHeader={()=> <ScrollImages navigator={this.props.navigator} data={data} />}
         />
       </ScrollView>
     );
