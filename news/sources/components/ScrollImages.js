@@ -25,7 +25,7 @@ class ScrollImages extends Component{
 
   render() {
     return(
-      <ImageTimer imgStyle = {styles.imgStyle} data = {data} timer = {1500} click = {this.onPress}/>
+      <ImageTimer imgStyle = {styles.imgStyle} data = {data} timer = {1000} click = {this.onPress}/>
 
      ); 
   }

@@ -7,7 +7,6 @@ import {
   ScrollView,
   RefreshControl,
   Dimensions,
-  ListView
 } from 'react-native';
 
 var data = [
@@ -34,26 +33,27 @@ var data = [
        imgs:
         ["http://photo.l99.com/common/23/1343755872868_t7fnd5.png","http://photo.l99.com/common/22/1353890154186_nr5m4g.gif"],
        title: "亚洲杯-吴曦孙可造逆转 国足2-1胜提前锁头名出线"
-      },{commentNum: 1,
+      },
+      {commentNum: 1,
        imgs:
         ["http://photo.l99.com/bigger/13/1411438559983_54e33v.jpg"],
        title: "特评：击败宿命出线 可这样的国奥又有啥希望"
-      },{commentNum: 1,
+      },
+      {commentNum: 1,
+       imgs:[], 
        title: "中国代表团未透露旗手人选 需考虑运动员形象"
       }
 ];
 
 import ScrollImages from './ScrollImages';
+import List from './List';
 //头部滚动菜单
 var Content = React.createClass({
-  
   getInitialState() {
-      var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-      return {
-        isRefreshing: false,
-        dataSource: ds.cloneWithRows(data),
-      };
-    },
+    return {
+      isRefreshing: false
+    };
+  },
   render(){
     return (
       <ScrollView contentContainerStyle = {styles.contentContainer} showsVerticalScrollIndicator = {false}
@@ -68,23 +68,18 @@ var Content = React.createClass({
               />
         }
        >
-        <ListView
-          dataSource={this.state.dataSource}
-          renderRow={(rowData) => <Text>{rowData.title}</Text>}
-          renderHeader={()=> <ScrollImages navigator={this.props.navigator} data={data} />}
-        />
+        <List renderHeader={()=> <ScrollImages navigator={this.props.navigator} data={data} />} pnav={this.props.navigator} /> 
       </ScrollView>
     );
   },
   _onRefresh() {
-      this.setState({isRefreshing: true});
-      setTimeout(() => {
-        this.setState({
-          isRefreshing: false,
-        });
-      }, 2000);
-    }
-
+    this.setState({isRefreshing: true});
+    setTimeout(() => {
+      this.setState({
+        isRefreshing: false,
+      });
+    }, 2000);
+  }
 })
 
 var styles = StyleSheet.create({
