@@ -33,23 +33,11 @@ var data = [
        imgs:
         ["http://photo.l99.com/common/23/1343755872868_t7fnd5.png","http://photo.l99.com/common/22/1353890154186_nr5m4g.gif"],
        title: "亚洲杯-吴曦孙可造逆转 国足2-1胜提前锁头名出线"
-<<<<<<< HEAD
       },
       {commentNum: 1,
        imgs:
-        ["http://photo.l99.com/bigger/13/1411438559983_54e33v.jpg"],
+        ["http://photo.l99.com/bigger/13/1411438559983_54e33v.jpg","http://photo.l99.com/common/03/1380015225428_h7dz1t.png"],
        title: "特评：击败宿命出线 可这样的国奥又有啥希望"
-      },
-      {commentNum: 1,
-       imgs:[], 
-=======
-      },{commentNum: 1,
-       imgs:
-        ["http://photo.l99.com/bigger/13/1411438559983_54e33v.jpg"],
-       title: "特评：击败宿命出线 可这样的国奥又有啥希望"
-      },{commentNum: 1,
->>>>>>> 9400cdaff8c7d51d98873f58c8f64812d7df8ee6
-       title: "中国代表团未透露旗手人选 需考虑运动员形象"
       }
 ];
 
