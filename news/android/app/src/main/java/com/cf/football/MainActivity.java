@@ -1,11 +1,13 @@
 package com.cf.football;
 
 import com.facebook.react.ReactActivity;
+import com.microsoft.codepush.react.CodePush;
 import com.liuchungui.react_native_umeng_push.UmengPushPackage;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.umeng.analytics.MobclickAgent;
 
+import javax.annotation.Nullable;
 import java.util.Arrays;
 import java.util.List;
 
@@ -37,6 +39,7 @@ public class MainActivity extends ReactActivity {
     protected List<ReactPackage> getPackages() {
         return Arrays.<ReactPackage>asList(
             new MainReactPackage(),
+            new CodePush(this.getResources().getString(R.string.reactNativeCodePush_androidDeploymentKey), this, BuildConfig.DEBUG),
             new UmengPushPackage()
         );
     }
@@ -53,5 +56,9 @@ public class MainActivity extends ReactActivity {
         MobclickAgent.onPause(this);
     }
 
-
+    @Nullable
+    @Override
+    protected String getJSBundleFile() {
+        return CodePush.getBundleUrl();
+    }
 }
