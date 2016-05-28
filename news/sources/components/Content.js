@@ -38,6 +38,13 @@ var data = [
        imgs:
         ["http://photo.l99.com/bigger/13/1411438559983_54e33v.jpg","http://photo.l99.com/common/03/1380015225428_h7dz1t.png"],
        title: "特评：击败宿命出线 可这样的国奥又有啥希望"
+<<<<<<< HEAD
+      },
+      {commentNum: 1,
+       imgs:[], 
+       title: "中国代表团未透露旗手人选 需考虑运动员形象"
+=======
+>>>>>>> origin/master
       }
 ];
 
