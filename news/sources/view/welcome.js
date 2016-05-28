@@ -22,7 +22,7 @@ import {
 
 import Home from './home';
 import UmengPush from 'react-native-umeng-push';
-
+import codePush from 'react-native-code-push';
 class Welcome extends Component {
 	constructor(props) {
 	    super(props);  
@@ -41,6 +41,12 @@ class Welcome extends Component {
     	UmengPush.didOpenMessage(message => {
      		 console.log("didOpenMessage====:", message);
     	});
+    	    
+	 codePush.sync(
+	        { updateDialog: {title:"中国足球",appendReleaseDescription:true,optionalIgnoreButtonLabel:"忽略",optionalInstallButtonLabel:"安装",optionalUpdateMessage:"有可用的更新，快快更新吧!" }, installMode: codePush.InstallMode.IMMEDIATE }
+     	);
+
+     console.log("home  codePush.sync();------------------------------ ");
 
         let timing = Animated.timing
 	    Animated.sequence([

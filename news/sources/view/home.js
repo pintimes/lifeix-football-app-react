@@ -29,6 +29,9 @@ class Home extends Component {
         super(props);
       }
 
+      componentWillMount() {
+      
+      }
 
 	render() {
 
