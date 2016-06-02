@@ -19,6 +19,7 @@
 #import "UMSocialQQHandler.h"
 #import "UMSocialSinaSSOHandler.h"
 #import "RCTLinkingManager.h"
+#import "CodePush.h"
 
 @implementation AppDelegate
 
@@ -84,8 +85,12 @@
    * `inet` value under `en0:`) and make sure your computer and iOS device are
    * on the same Wi-Fi network.
    */
-
+#ifdef DEBUG
   jsCodeLocation = [NSURL URLWithString:@"http://localhost:8081/index.ios.bundle?platform=ios&dev=true"];
+#else
+  jsCodeLocation = [CodePush bundleURL];
+#endif
+//  jsCodeLocation = [NSURL URLWithString:@"http://localhost:8081/index.ios.bundle?platform=ios&dev=true"];
   //jsCodeLocation = [NSURL URLWithString:@"http://192.168.50.36/index.ios.bundle?platform=ios&dev=true"];
   /**
    * OPTION 2
@@ -95,8 +100,8 @@
    * simulator in the "Release" build configuration.
    */
 
-//   jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
-
+//   jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];  
+//  jsCodeLocation = [CodePush bundleURL];
   RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
                                                       moduleName:@"news"
                                                initialProperties:nil
