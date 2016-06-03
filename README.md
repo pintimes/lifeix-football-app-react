@@ -5,8 +5,10 @@
 ~~- React-native-tabbar <https://github.com/ngstyle/react-native-tabBar>~~
 `~~npm install react-native-xtabbar --save ~~`
 
-- react-native-side-menu<https://github.com/react-native-fellowship/react-native-side-menu>
+~~- react-native-side-menu<https://github.com/react-native-fellowship/react-native-side-menu>～～
 `npm install react-native-side-menu`
+
+- react-native-redux-router <https://github.com/aksonov/react-native-redux-router>
 
 - react-native-navigation-bar <https://github.com/beefe/react-native-navigation-bar>
 `npm install react-native-navigation-bar --save`
