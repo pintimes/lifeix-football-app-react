@@ -47,10 +47,6 @@ var ImageTimer = React.createClass({
                >
                   {this._renderCycleImages()}
               </ScrollView>
-
-              <View style = {styles.pageViewStyle}>
-                  {this.renderPageIndicator()}
-              </View>
         </View>
       )
     },
@@ -95,29 +91,13 @@ var ImageTimer = React.createClass({
             />
             <View style = {styles.titleLabelStyle}>
               <Text style = {styles.titleTextStyle}>
-                  {data[i].title}
+                {data[i].title}
               </Text>
             </View>
           </TouchableOpacity>
         );
       }
       return allImages;
-    },
-
-    // 加载图片指示器
-    renderPageIndicator() {
-      var allCycle = [];
-      var style;
-      var data = this.props.data;
-      for (var i = 0; i < data.length; i++){
-        // 判断是否是当前页
-        style = (i == this.state.currentPage)? {color:'red'} :{color:'white'};
-        allCycle.push(
-            <Text key = {i} style = {styles.pageCircleStyle, style}>&bull;
-            </Text>
-        );
-      }
-      return allCycle;
     },
 
     // 当一帧滚动完毕的时候
@@ -157,21 +137,7 @@ var styles = StyleSheet.create({
   titleTextStyle: {
     textAlign: 'center',
     fontSize: 18
-  },
-  pageViewStyle: {
-    flexDirection:'row',
-        width:width,
-        height:30,
-        backgroundColor:'rgba(222,222,222,0.6)',
-        position:'absolute',
-        bottom:0,
-        alignItems:'center',
-        justifyContent:'center'
-  },  
-  pageCircleStyle:{
-        fontSize:30,
-        marginLeft:5
-  },
+  } 
 });
 
 module.exports = ImageTimer;

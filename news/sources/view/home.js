@@ -9,7 +9,9 @@ import {
   StyleSheet,
     View,
     Component,
-    Text
+    Text,
+    Platform,
+    Dimensions
 } from 'react-native';
 
 
@@ -40,8 +42,8 @@ class Home extends Component {
                 
                 <View style={styles.container}>
                     {this.renderNavigationBar()}
-                    <ScrollMenu/>
-                    <View>
+      
+                    <View style = {styles.content}>
                       <Content navigator={this.props.navigator} />
                     </View>
                 </View>
@@ -49,20 +51,10 @@ class Home extends Component {
               );
 	}
 
-	renderLoadingView() {
-            return (
-              <View style={styles.container}>
-        	    <Text style={styles.title}>
-        	      主页
-        	    </Text>
-        	  </View>
-            );
-	}
-
   renderNavigationBar(){
     return (
           <NavigationBar 
-              title={'中国足球网'}
+              title={'首页'}
               height={30}
               titleColor={'#FCD116'}
               backgroundColor={'#CE1126'}
@@ -105,6 +97,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'white',
+  },
+  content: {
+    height: Dimensions.get('window').height,
+    flexDirection: 'row',
+    marginTop: 30 + (Platform.OS == 'ios'?20:0)
   }
 });
 module.exports = Home

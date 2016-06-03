@@ -3,6 +3,10 @@
  * https://github.com/facebook/react-native
  * @flow
  */
-import { AppRegistry } from 'react-native';
-import Example from './Example';
-AppRegistry.registerComponent('Example', () => Example);
+import React, { Component } from 'react';
+import {
+  AppRegistry
+} from 'react-native';
+
+import App from './sources/app'
+AppRegistry.registerComponent('news', () => App);
