@@ -12,6 +12,7 @@ import {
 var width = Dimensions.get('window').width;
 import ImageTimer from './ImageTimer';
 import Detail from '../view/detail'
+import {Actions}  from 'react-native-redux-router';
 
 // 轮播图数据源
 var data = null;var navigator ;
@@ -31,12 +32,7 @@ class ScrollImages extends Component{
   }
 
   onPress(post) {
-    navigator.push({
-      component:Detail,
-      params:{
-        title:post.title
-      }
-    })
+    Actions.detail({data:post});
   }
 
 };

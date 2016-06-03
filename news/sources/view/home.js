@@ -3,8 +3,6 @@
  * https://github.com/facebook/react-native
  * @flow
  */
- //忽略warning 
- console.ignoredYellowBox = ['Warning: ReactNative.createElement'];
 
 import React from 'react';
 import {

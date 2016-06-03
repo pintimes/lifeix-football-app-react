@@ -13,20 +13,7 @@ class Detail extends Component {
 	render(){
 		return(
 			<View style={{flex:1}}>
-				<NavigationBar 
-		              title={this.props.title}
-		              height={30}
-		              titleColor={'#FCD116'}
-		              backgroundColor={'#CE1126'}
-		              //leftButtonIcon={require('../imgs/start_hightlight.png')}
-		              leftButtonTitle={'back'}
-		              //leftButtonTitleColor={'#fff'}
-		              onLeftButtonPress={()=>this.back()} 
-		              //rightButtonIcon={require('../imgs/start_hightlight.png')}
-		              //rightButtonTitle={'中国足球网'}
-		              //rightButtonTitleColor={'#CE1126'}
-		              //onRightButtonPress={this.onForwardHandle}
-		          />
+				
 			<View style={styles.content}>	          
 				<WebView source={{uri: 'http://www.l99.com/EditText_view.action?textId=9530071'}}></WebView>	          
 			</View>	

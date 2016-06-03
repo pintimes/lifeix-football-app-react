@@ -68,7 +68,7 @@ var Content = React.createClass({
               />
         }
        >
-        <List renderHeader={()=> <ScrollImages navigator={this.props.navigator} data={data} />} pnav={this.props.navigator} /> 
+        <List renderHeader={()=> <ScrollImages data={data} />} pnav={this.props.navigator} /> 
       </ScrollView>
     );
   },

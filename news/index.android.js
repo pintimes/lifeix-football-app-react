@@ -5,45 +5,8 @@
 
 import React, { Component } from 'react';
 import {
-  AppRegistry,
-  StyleSheet,
-  Navigator,
-  Text,
-  View
+  AppRegistry
 } from 'react-native';
-import Welcome from './sources/view/welcome'
-console.disableYellowBox=true;
-class news extends Component {
-  render() {
-     return (
-        <Navigator styles ={styles.container}
-          initialRoute={{
-            component: Welcome
-          }}
-          renderScene={(route, navigator) => { 
-            return <route.component {...route.params} navigator={navigator}/>
-          }}/>
-      );
-  }
-}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
-
-AppRegistry.registerComponent('news', () => news);
+import App from './sources/app'
+AppRegistry.registerComponent('news', () => App);

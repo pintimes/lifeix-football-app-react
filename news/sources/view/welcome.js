@@ -15,14 +15,12 @@ import {
     Image,
     Navigator,
     Text,
-    NativeAppEventEmitter, 
-  	NativeModules, 
-  	DeviceEventEmitter
 } from 'react-native';
 
 import Home from './home';
 import UmengPush from 'react-native-umeng-push';
 import codePush from 'react-native-code-push';
+import {Actions}  from 'react-native-redux-router';
 class Welcome extends Component {
 	constructor(props) {
 	    super(props);  
@@ -59,7 +57,7 @@ class Welcome extends Component {
 	        duration: 800
 	      })
 	    ]).start(async() => {
-      		setTimeout(() => this.homePage(), 100)
+      		setTimeout(() => Actions.home(), 100)
     	})
     }
 
