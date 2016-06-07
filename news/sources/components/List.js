@@ -19,6 +19,8 @@ import React, {
 import ProgressBar from 'ProgressBarAndroid';
 import Li from './Li';
 import Detail from '../view/detail';
+import {Actions}  from 'react-native-redux-router';
+
 
 var ds = new ListView.DataSource({
     rowHasChanged: (r1, r2) => r1 !== r2
@@ -137,13 +139,7 @@ export default class List extends React.Component{
   // 进入详情页
   navHandleChange(data) {
     console.log("进入详情页 id="+data.id);
-    this.props.pnav.push({
-      component:Detail,
-      title: data.title,
-      // params:{
-      //   id:data.id
-      // }
-    })
+     Actions.detail({data:data});
   }
 
   // 下拉刷新

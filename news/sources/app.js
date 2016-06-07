@@ -19,6 +19,7 @@ import Home from './view/home';
 import Detail from './view/detail';
 import Settings from './view/settings';
 import {NavBar, NavBarModal,NavBarLeft} from './common/NavBar';
+import Test from './view/test';
 console.disableYellowBox=true;
 
 let store = createStore(combineReducers({routerReducer}));
@@ -45,11 +46,12 @@ export default class App extends Component {
       <Provider store={store}>
               <Router>
                      <Schema name="default" sceneConfig={Animations.FlatFloatFromRight} />
-                     <Schema name="withoutAnimation" sceneConfig={Animations.FlatFloatFromBottom} />
+                     <Schema name="withoutAnimation" sceneConfig={Animations.FlatFloatFromBottom} navBar={NavBarLeft} />
                     <Route name="welcome" component={Welcome} initial={true} />
                     <Route name="home" component={Home} schema="default" title="首页" />
-                    <Route name="detail" component={Detail} schema="withoutAnimation" navBar={NavBarLeft} />
+                    <Route name="detail" component={Detail} schema="withoutAnimation" title="详情" />
                      <Route name="settings" component={Settings} />
+                     <Route name="test" component={Test} />
               </Router>
        </Provider> 
     )

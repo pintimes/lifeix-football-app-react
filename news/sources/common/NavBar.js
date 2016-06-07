@@ -39,7 +39,7 @@ class NavBar extends React.Component {
 class NavBarLeft extends React.Component {
    render() {
      var Actions = this.props.routes;
-       return <NavBarBase customNext={<View/>} {...this.props} leftButton={<Left onPress={this.props.onPress}  />}/>
+       return <NavBarBase customNext={<View/>} {...this.props} leftButton={<Left onPress={this.props.onPress}  {...this.props}  />}/>
    }
 }
 

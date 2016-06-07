@@ -4,10 +4,14 @@ import {
     View,
     Component,
     Text,
-    ListView
+    ListView,
+    TouchableOpacity
 } from 'react-native';
 
-class Settings extends Component {
+import {Actions}  from 'react-native-redux-router';
+
+var that ;
+class Settings extends  Component {
   constructor(props) {
     super(props);
     // 数据源
@@ -17,16 +21,20 @@ class Settings extends Component {
     this.state = {
       dataSource: ds.cloneWithRowsAndSections(category)
     };
+    that = this;
   }
 
 // 渲染每行 onPress={this.clickCategory.bind(this, data)}
-  _renderList(data,sectionID,rowID) {
+  _renderList(data,sectionData, sectionID) {
+
     return (
-      <View style = {{flex: 1, height: 44, justifyContent: 'center'}}>
+      <TouchableOpacity activeOpacity={0.4} onPress={()=>that.clickCategory(data)}>
+      <View style = {{flex: 1, height: 44, justifyContent: 'center'}} >
         <Text style = {styles.cate}>{data}</Text>
         <View style = {{height: 0.5, backgroundColor: '#ddd', marginTop: 14}}>
         </View>
       </View>
+      </TouchableOpacity>
     );
   }
 
@@ -71,7 +79,10 @@ class Settings extends Component {
 
   // clickEvent
   clickCategory(data) {
-    console.log(data);
+    console.log(data+"  ===categor");
+    if (data ==="模拟测试") {
+        Actions.test();
+    }
   }
 
   clickAbout() {
@@ -117,6 +128,5 @@ var styles = StyleSheet.create({
     justifyContent: 'center'
   }
 });
-
 
 module.exports = Settings

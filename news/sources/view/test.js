@@ -4,33 +4,44 @@ import {
     View,
     Component,
     Text,
-    ListView
+    ListView,Dimensions
 } from 'react-native';
 
-import SideMenu from 'react-native-side-menu'
-import Settings from './settings'
+import SideMenu from 'react-native-side-menu';
+import {NavBar, NavBarModal,NavBarLeft} from '../common/NavBar';
+import Settings from './settings';
 class Test extends Component {
+  state = {
+        isOpen: false,
+      };
   constructor(props) {
     super(props);
-    // 数据源
-    var category = {"C-F.com中国足球":["首页", "资讯", "教练", "裁判"], "球员":["男足", "女足"], "教学":["视频教程", "模拟测试"]};
-  
   }
 
 
   render() {
+
+ const menu = <Settings navigator={navigator} />
+
     return (
+      <View style={styles.container}>
         <SideMenu menu={menu} isOpen={this.state.isOpen}
-                    onChange={(isOpen) => this.updateMenuState(isOpen)}>
-                
-                <View style={styles.container}>
-                  
-                    <View style = {styles.content}>
-                      <Content navigator={this.props.navigator} />
-                    </View>
+                onChange={(isOpen) => this.updateMenuState(isOpen)}>
+                <NavBarLeft title="test" onPress={()=>this.toggle()} />
+                <View style = {styles.content}>
+                 
                 </View>
-                </SideMenu>
+            </SideMenu>
+       </View>
     );
+  }
+
+  toggle() {
+    this.setState({ isOpen:!this.state.isOpen});
+  }
+
+  updateMenuState(isOpen) {
+    this.setState({ isOpen, });
   }
 
 }
@@ -40,7 +51,11 @@ var styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#778899',
   },
- 
+ content: {
+    height: Dimensions.get('window').height,
+    flexDirection: 'row',
+    backgroundColor: '#fff'
+  }
 });
 
 

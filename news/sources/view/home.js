@@ -33,7 +33,7 @@ class Home extends Component {
 
 	render() {
 
-              const menu = <Settings />
+              const menu = <Settings navigator={navigator} />
 		return (
               <View style={styles.container}>
              
