@@ -5,17 +5,20 @@
 ~~- React-native-tabbar <https://github.com/ngstyle/react-native-tabBar>~~
 `~~npm install react-native-xtabbar --save ~~`
 
-~~- react-native-side-menu<https://github.com/react-native-fellowship/react-native-side-menu>~~
+- react-native-side-menu<https://github.com/react-native-fellowship/react-native-side-menu>
 `npm install react-native-side-menu`
+
+- react-native-navbar<https://github.com/react-native-fellowship/react-native-navbar>
+`npm i react-native-navbar --save`
 
 - react-native-redux-router <https://github.com/aksonov/react-native-redux-router>
 
-- react-native-navigation-bar <https://github.com/beefe/react-native-navigation-bar>
+~~- react-native-navigation-bar <https://github.com/beefe/react-native-navigation-bar>~~
 `npm install react-native-navigation-bar --save`
 
 > 也可以<https://github.com/react-native-fellowship/react-native-navbar>
 
-- react-native-scrollable-tab-view <https://github.com/skv-headless/react-native-scrollable-tab-view> 
+~~- react-native-scrollable-tab-view <https://github.com/skv-headless/react-native-scrollable-tab-view>~~
 `npm install react-native-scrollable-tab-view --save`
 
 -  友盟推送React-native <https://github.com/liuchungui/react-native-umeng-push>
