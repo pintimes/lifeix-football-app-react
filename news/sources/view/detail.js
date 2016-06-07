@@ -8,7 +8,6 @@ import {
   Dimensions,PixelRatio,
   ScrollView,
 } from 'react-native';
-import NavigationBar from 'react-native-navigation-bar';
 class Detail extends Component {
 	render(){
 		return(
@@ -28,7 +27,6 @@ class Detail extends Component {
 
 var styles = StyleSheet.create({
 	content: {
-	    marginTop:30+(Platform.OS === 'ios' ? 20 : 0),
 	    backgroundColor:'#fff',
 	    width: Dimensions.get('window').width,
 	    flex:1,

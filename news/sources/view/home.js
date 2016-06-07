@@ -14,12 +14,10 @@ import {
     Dimensions
 } from 'react-native';
 
-
-import ScrollMenu from '../components/ScrollMenu';
 import Content from '../components/Content';
 import Settings from './settings'
-import NavigationBar from 'react-native-navigation-bar';
 import SideMenu from 'react-native-side-menu'
+import {NavBar, NavBarModal,NavBarLeft} from '../common/NavBar';
 
 class Home extends Component {
         state = {
@@ -37,36 +35,23 @@ class Home extends Component {
 
               const menu = <Settings />
 		return (
+              <View style={styles.container}>
+             
                 <SideMenu menu={menu} isOpen={this.state.isOpen}
                     onChange={(isOpen) => this.updateMenuState(isOpen)}>
-                
-                <View style={styles.container}>
-                    {this.renderNavigationBar()}
-      
+                 <NavBarLeft title="首页" onPress={()=>this.toggle()} />
                     <View style = {styles.content}>
                       <Content navigator={this.props.navigator} />
                     </View>
-                </View>
+                
                 </SideMenu>
+                </View>
               );
 	}
 
   renderNavigationBar(){
     return (
-          <NavigationBar 
-              title={'首页'}
-              height={30}
-              titleColor={'#FCD116'}
-              backgroundColor={'#CE1126'}
-              leftButtonIcon={require('../imgs/start_hightlight.png')}
-              //leftButtonTitle={'back'}
-              //leftButtonTitleColor={'#fff'}
-              onLeftButtonPress={()=>this.toggle()} 
-              //rightButtonIcon={require('../imgs/start_hightlight.png')}
-              //rightButtonTitle={'中国足球网'}
-              //rightButtonTitleColor={'#CE1126'}
-              //onRightButtonPress={this.onForwardHandle}
-          />
+        <View />
       );
   }
   toggle() {
@@ -87,7 +72,7 @@ class Home extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff'
+    
   },
   tabBar:{
     backgroundColor: '#CE1126',
@@ -101,7 +86,7 @@ const styles = StyleSheet.create({
   content: {
     height: Dimensions.get('window').height,
     flexDirection: 'row',
-    marginTop: 30 + (Platform.OS == 'ios'?20:0)
+    backgroundColor: '#fff'
   }
 });
 module.exports = Home
