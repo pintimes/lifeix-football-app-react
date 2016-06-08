@@ -1,7 +1,8 @@
 # lifeix-football-app-react
 
 ####  Dependency 使用
-
+- react-native-grid-view<https://github.com/lucholaf/react-native-grid-view>
+`npm install react-native-grid-view`
 ~~- React-native-tabbar <https://github.com/ngstyle/react-native-tabBar>~~
 `~~npm install react-native-xtabbar --save ~~`
 
