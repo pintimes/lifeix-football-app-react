@@ -79,10 +79,8 @@ class Settings extends  Component {
 
   // clickEvent
   clickCategory(data) {
-    console.log(data+"  ===categor");
-    if (data ==="模拟测试") {
-        Actions.test();
-    }
+        console.log(data+"  ===categor");
+        Actions.home({title:data,componentName:'test'});
   }
 
   clickAbout() {

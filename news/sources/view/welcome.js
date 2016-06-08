@@ -57,12 +57,13 @@ class Welcome extends Component {
 	        duration: 800
 	      })
 	    ]).start(async() => {
-      		setTimeout(() => Actions.home(), 100)
+      		setTimeout(() =>this.homePage() , 100)
     	})
     }
 
     homePage(){
     	//跳转到主页
+    	//Actions.home({type:"reset"});
     	this.props.navigator.resetTo({
     		component: Home
     	});

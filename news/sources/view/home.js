@@ -11,13 +11,16 @@ import {
     Component,
     Text,
     Platform,
-    Dimensions
+    Dimensions,BackAndroid
 } from 'react-native';
 
-import Content from '../components/Content';
+
 import Settings from './settings'
 import SideMenu from 'react-native-side-menu'
 import {NavBar, NavBarModal,NavBarLeft} from '../common/NavBar';
+import Content from '../components/Content';
+import Test from '../components/Test';
+
 
 class Home extends Component {
         state = {
@@ -27,23 +30,39 @@ class Home extends Component {
         super(props);
       }
 
-      componentWillMount() {
-      
-      }
+     
+  componentWillMount() {
+    if (Platform.OS === 'android') {
+      BackAndroid.addEventListener('hardwareBackPress', this.onBackAndroid);
+    }
+  }
+  componentWillUnmount() {
+    if (Platform.OS === 'android') {
+      BackAndroid.removeEventListener('hardwareBackPress', this.onBackAndroid);
+    }
+  }
+  //Android back 
+  onBackAndroid = () => {
+    const nav = this.props.navigator;
+    const routers = nav.getCurrentRoutes();
+    if (routers.length > 1) {
+      nav.pop();
+      return true;
+    }
+    return false;
+  };
 
 	render() {
 
               const menu = <Settings navigator={navigator} />
 		return (
               <View style={styles.container}>
-             
                 <SideMenu menu={menu} isOpen={this.state.isOpen}
                     onChange={(isOpen) => this.updateMenuState(isOpen)}>
-                 <NavBarLeft title="首页" onPress={()=>this.toggle()} />
+                 <NavBarLeft title={this.props.title||'中国足球'} onPress={()=>this.toggle()} />
                     <View style = {styles.content}>
-                      <Content navigator={this.props.navigator} />
+                      {this.renderContent()}
                     </View>
-                
                 </SideMenu>
                 </View>
               );
@@ -54,38 +73,35 @@ class Home extends Component {
         <View />
       );
   }
+
+  renderContent(){
+    const name = this.props.componentName||'home';
+    switch (name) {
+      case 'home':
+        return <Content />;
+      case 'test':
+        return <Test />;
+      default:
+            return <Content />;
+
+    }
+  }
+
+
   toggle() {
     this.setState({ isOpen:!this.state.isOpen});
-
-
   }
 
   updateMenuState(isOpen) {
     this.setState({ isOpen, });
-  }
-
-  onForwardHandle(){
-
   }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    
-  },
-  tabBar:{
-    backgroundColor: '#CE1126',
-  },
-  text: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'white',
   },
   content: {
-    height: Dimensions.get('window').height,
-    flexDirection: 'row',
     backgroundColor: '#fff'
   }
 });

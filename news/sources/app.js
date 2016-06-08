@@ -31,25 +31,17 @@ export default class App extends Component {
   
   render() {
     return this.renderRouter();
-      /*<Navigator styles ={styles.container}
-        initialRoute={{
-          component: Welcome
-        }}
-        renderScene={(route, navigator) => { 
-          return <route.component {...route.params} navigator={navigator}/>
-        }}/>*/
-    
   }
 
   renderRouter(){
     return (
       <Provider store={store}>
               <Router>
-                     <Schema name="default" sceneConfig={Animations.FlatFloatFromRight} />
-                     <Schema name="withoutAnimation" sceneConfig={Animations.FlatFloatFromBottom} navBar={NavBarLeft} />
-                    <Route name="welcome" component={Welcome} initial={true} />
+                     <Schema name="default" sceneConfig={Animations.FlatFloatFromRight}/>
+                     <Schema name="withoutAnimation" sceneConfig={Animations.FlatFloatFromBottom} navBar={NavBarLeft}  type="RESET"/>
+                    <Route name="welcome" component={Welcome} initial={true} type="reset" />
                     <Route name="home" component={Home} schema="default" title="首页" />
-                    <Route name="detail" component={Detail} schema="withoutAnimation" title="详情" />
+                    <Route name="detail" component={Detail} schema="withoutAnimation" title="详情"/>
                      <Route name="settings" component={Settings} />
                      <Route name="test" component={Test} />
               </Router>
