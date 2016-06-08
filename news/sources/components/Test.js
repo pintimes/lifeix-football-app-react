@@ -3,8 +3,8 @@ import {
   StyleSheet,
     View,
     Component,
-    Text,Image,
-    ListView,Dimensions,ScrollView
+    Text,Image,TouchableOpacity,
+    Dimensions,ScrollView
 } from 'react-native';
 var width =Dimensions.get('window').width;
 var data = [
@@ -13,10 +13,11 @@ var data = [
       {img:"http://photo.l99.com/common/30/1394108924725_45gms8.jpg",title: "习大普奔，国运强则球运兴！"},
       {img:"http://photo.l99.com/common/31/1371533509639_p3h709.jpg",title: "女足门将身高1.87米长相清秀 惊艳抢镜(图)"}];
 
-
+var that ;
 class Test extends Component {
   constructor(props) {
     super(props);
+    that =this;
   }
 
 
@@ -30,12 +31,15 @@ class Test extends Component {
                 scrollEventThrottle={200}>
                 {data.map(function(item,i){
                   return (
-                        <Image style={styles.img} source={{uri:item.img}}>
-                            <View style={styles.itemLabel}>
-                                <Text style={styles.itemTitle}>{item.title}</Text>
-                            </View>
-                        </Image>
-
+                        <TouchableOpacity activeOpacity={0.4} onPress={()=>that.onPress(item)}>
+                        <View>
+                          <Image style={styles.img} source={{uri:item.img}}>
+                              <View style={styles.itemLabel}>
+                                  <Text numberOfLines={1} style={styles.itemTitle}>{item.title}</Text>
+                              </View>
+                          </Image>
+                        </View>
+                        </TouchableOpacity>
                     );
                 })}
            </ScrollView>
@@ -43,6 +47,12 @@ class Test extends Component {
         </Image> 
     );
   }
+
+  onPress(item){
+    alert(item.title);
+  }
+
+
 }
 
 var styles = StyleSheet.create({
@@ -56,20 +66,22 @@ var styles = StyleSheet.create({
   },img: {
     width: width-20,
     height: 200,
-    margin:10
+    margin:10,
+     opacity:0.9,
   },itemLabel:{
       top: 150,
       backgroundColor:'#000',
       opacity:0.5,
       width: width,
-      alignItems:'center',
       height:30,
       justifyContent:'center',
   },itemTitle:{
+    letterSpacing:2,
     fontWeight:'bold',
     fontSize:18,
     textAlign:'left',
     color:'#fff',
+    marginLeft:10
   }
 
 });
