@@ -20,7 +20,7 @@ import SideMenu from 'react-native-side-menu'
 import {NavBar, NavBarModal,NavBarLeft} from '../common/NavBar';
 import Content from '../components/Content';
 import Test from '../components/Test';
-
+import Player from '../components/Player';
 
 class Home extends Component {
         state = {
@@ -77,10 +77,12 @@ class Home extends Component {
   renderContent(){
     const name = this.props.componentName||'home';
     switch (name) {
-      case 'home':
+      case 'home' || 'news':
         return <Content />;
       case 'test':
         return <Test />;
+      case 'player':
+        return <Player />;
       default:
             return <Content />;
 

@@ -6,98 +6,83 @@ import React, {
   View, 
   Image,
   PixelRatio,
-  Platform
+  Platform,
+  TouchableOpacity
 } from 'react-native';
 
 import Dimensions from 'Dimensions';
 
+var width = Dimensions.get('window').width - 20;
 export default class Li extends React.Component{
     constructor(props) {
         super(props);
     }
     render() {
-        if(this.props.data.images.length >=3) {
-            return this.li3(this.props.data);
-        } else if (this.props.data.images.length >=1) {
+        if(this.props.data.images.length >=1) {
             return this.li1(this.props.data);
         } else {
             return this.li0(this.props.data);
         }
     }
 
-    // 无图
+    // 无图 onPress = {this.props.click.bind(this, data)}
     li0(data) {
         return (
             <View style={styles.list}>
-                <Text style={styles.listTitle}>{data.title}</Text>
-                <Text style={styles.listMute}>{data.createTime}    {data.author.name}</Text>
+              <TouchableOpacity>
+                <Image
+                  source = {{uri: 'http://photo.l99.com/bigger/ab0/1459301431104_xdzd42.jpg'}}
+                  style = {styles.imageStyle}
+                />
+                <View style = {styles.titleLabelStyle}>
+                  <Text style = {styles.titleTextStyle}>
+                    {data.title}
+                  </Text>
+                </View>
+              </TouchableOpacity>
             </View>
         );
     }
     
-    // 一张图
+    // 一张图  onPress = {this.props.click.bind(this, data)}
     li1(data) {
         return (
             <View style={styles.list}>
-                <View style={{flexDirection: 'row'}}>
-                    <View style={{flex:1}}>
-                        <Text style={styles.listTitle}>{data.title}</Text>
-                        <Text style={styles.listMute}>{data.createTime}    {data.author.name}</Text>
-                    </View>
-                    <Image style={styles.listImg} source={{uri: data.images[0]}} />
+              <TouchableOpacity>
+                <Image
+                  source = {{uri: data.images[0]}}
+                  style = {styles.imageStyle}
+                />
+                <View style = {styles.titleLabelStyle}>
+                  <Text style = {styles.titleTextStyle}>
+                    {data.title}
+                  </Text>
                 </View>
-            </View>
-        );
-    }
-
-    // 三张图
-    li3(data) {
-        return (
-            <View style={styles.list}>
-                <Text style={styles.listTitle}>{data.title}</Text>
-                <View style={{marginTop:3,flexDirection:'row'}}>
-                    <Image style={styles.listImg} source={{uri: data.images[0]}} />
-                    <Image style={styles.listImg} source={{uri: data.images[1]}} />
-                    <Image style={styles.listImg} source={{uri: data.images[2]}} />
-                </View>
-                <Text style={styles.listMute}>{data.createTime}    {data.author.name}</Text>
+              </TouchableOpacity>
             </View>
         );
     }
 };
 
 var styles = StyleSheet.create({
-
   list: {
-        paddingTop:12,
-        paddingBottom:12,
-        paddingLeft:5,
-        paddingRight:5,
-        backgroundColor:'#fff',
-        marginBottom: 1,
+    padding: 10,
   },
-  listTitle: {
-      marginTop:-4,
-      lineHeight:23,
-      fontWeight: '400',
-      marginBottom:4,
-      letterSpacing: 0.8,
-      fontSize:('ios' == Platform.OS)? 19: 17,
-      color:('ios' == Platform.OS)? '#333': '#555',
+  imageStyle: {
+    width: width,
+    height: width * 0.5
   },
-  listImg: {
-      marginLeft:2,
-      marginRight:2,
-      width: (Dimensions.get('window').width-22)/3,
-      height: (Dimensions.get('window').width-22)*10/43,
-      backgroundColor: '#eeeeee'
+  titleLabelStyle: {
+    width: width,
+    height: 30,
+    alignItems:'center',
+    justifyContent:'center',
+    backgroundColor:'rgba(222,222,222,0.6)'
   },
-  listMute: {
-      fontSize:12,
-      color:'#999',
-      marginTop:10,
-  }
-
+  titleTextStyle: {
+    textAlign: 'center',
+    fontSize: 18
+  } 
 });
 
 module.exports = Li;

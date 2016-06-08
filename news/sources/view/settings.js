@@ -41,8 +41,13 @@ class Settings extends  Component {
   renderFooter() {
     return (
       <View style = {styles.footer}>
-        <Text style = {styles.footerText} onPress={this.clickAbout}>关于</Text>
-        <Text style = {styles.footerText, {marginLeft: 30}} onPress={this.clickSuggest}>建议</Text>
+        <TouchableOpacity activeOpacity={0.4} onPress={()=>that.clickCategory("关于")}>
+        <Text style = {styles.footerText}>关于</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity activeOpacity={0.4} onPress={()=>that.clickCategory("建议")}>
+        <Text style = {styles.footerText, {marginLeft: 30}}>建议</Text>
+        </TouchableOpacity>
       </View>
     )
   }
@@ -81,18 +86,14 @@ class Settings extends  Component {
   clickCategory(data) {
         if (data=='首页') {
           Actions.home({title:data,componentName:'home'});
-        }else{
+        }else if(data == '男足'){
+          Actions.home({title:data,componentName:'player'});
+        }else if(data == '资讯'){
+          Actions.home({title:data,componentName:'news'});
+        }else {
           Actions.home({title:data,componentName:'test'});
         }
         
-  }
-
-  clickAbout() {
-    console.log("关于");
-  }
-
-  clickSuggest() {
-    console.log("建议");
   }
 }
 
