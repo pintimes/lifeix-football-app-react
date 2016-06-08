@@ -20,7 +20,7 @@ class NavBarBase extends React.Component {
        var Actions = this.props.routes;
        //console.log(this.props.name+"P"+this.props.title+"rops : " + this.props);
        return <NavigationBar style={styles.navBar}
-                             tintColor='white'
+                             tintColor='#CE1126'
                              statusBar= {{style:'light-content', hidden: false}}
                              title= {{title:this.props.title,tintColor:"#fff"}}
                              prevTitle={this.props.initial ? " " : null}
@@ -52,6 +52,7 @@ class NavBarModal extends React.Component {
 
 var styles = StyleSheet.create({
    navBar: {
+
        height:30,
        backgroundColor: '#CE1126',
    },
