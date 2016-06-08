@@ -6,7 +6,7 @@ import {
     Text,Image,
     ListView,Dimensions,ScrollView
 } from 'react-native';
-
+var width =Dimensions.get('window').width;
 var data = [
       {img:"http://photo.l99.com/common/ab0/1459301431104_xdzd42.jpg",title: "用胜利回敬谩骂——国足奇迹夜后记"},
       {img:"http://photo.l99.com/common/5ac/1433940289400_iwu9f3.jpg",title: "球场暴力事件不断 中国男足还有希望吗？ 这是一个超级长的标题"},
@@ -23,36 +23,55 @@ class Test extends Component {
   render() {
 
     return (
+      <Image style={styles.bgImage} source={require('../imgs/fb_bg.jpg')}>
+        <View style={styles.container}>
           <ScrollView style = {styles.content}
-                    automaticallyAdjustContentInsets={false}
-                    onScroll={() => { console.log('onScroll!'); }}
-                    scrollEventThrottle={200}>
-                    {data.map(function(item,i){
-                      return (
-                            <View>
-                            <Image style={styles.img} source={{uri:item.img}} />
+                ref='scrollView'
+                scrollEventThrottle={200}>
+                {data.map(function(item,i){
+                  return (
+                        <Image style={styles.img} source={{uri:item.img}}>
+                            <View style={styles.itemLabel}>
+                                <Text style={styles.itemTitle}>{item.title}</Text>
                             </View>
-                        );
-                    })}
-               </ScrollView>
+                        </Image>
+
+                    );
+                })}
+           </ScrollView>
+        </View>
+        </Image> 
     );
   }
 }
 
 var styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#778899',
+    height: Dimensions.get('window').height-50,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },bgImage:{
+    height: Dimensions.get('window').height,
+    width: width,
   },img: {
-    width: Dimensions.get('window').width-20,
+    width: width-20,
     height: 200,
     margin:10
-  },
- content: {
-    height: Dimensions.get('window').height,
-    flexDirection: 'row',
-    backgroundColor: '#fff'
+  },itemLabel:{
+      top: 150,
+      backgroundColor:'#000',
+      opacity:0.5,
+      width: width,
+      alignItems:'center',
+      height:30,
+      justifyContent:'center',
+  },itemTitle:{
+    fontWeight:'bold',
+    fontSize:18,
+    textAlign:'left',
+    color:'#fff',
   }
+
 });
 
 module.exports = Test

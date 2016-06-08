@@ -100,8 +100,10 @@ class Home extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+
   },
   content: {
+    height: Dimensions.get('window').height,
     backgroundColor: '#fff'
   }
 });

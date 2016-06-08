@@ -79,8 +79,12 @@ class Settings extends  Component {
 
   // clickEvent
   clickCategory(data) {
-        console.log(data+"  ===categor");
-        Actions.home({title:data,componentName:'test'});
+        if (data=='首页') {
+          Actions.home({title:data,componentName:'home'});
+        }else{
+          Actions.home({title:data,componentName:'test'});
+        }
+        
   }
 
   clickAbout() {

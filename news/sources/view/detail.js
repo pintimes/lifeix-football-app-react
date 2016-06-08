@@ -12,7 +12,6 @@ class Detail extends Component {
 	render(){
 		return(
 			<View style={{flex:1}}>
-				
 			<View style={styles.content}>	          
 				<WebView source={{uri: 'http://www.l99.com/EditText_view.action?textId=9530071'}}></WebView>	          
 			</View>	
