@@ -3,7 +3,6 @@
 var NavigationBar = require('react-native-navbar');
 var React = require('react-native');
 var {StyleSheet,View} = React;
-var {Router, Route, Animations, Schema} = require('react-native-redux-router');
 import Left from './LeftButton';
 class NavBarBase extends React.Component {
    // onPrev(){

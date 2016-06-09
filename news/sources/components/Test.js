@@ -6,6 +6,8 @@ import {
     Text,Image,TouchableOpacity,
     Dimensions,ScrollView
 } from 'react-native';
+import {Actions}  from 'react-native-redux-router';
+
 var width =Dimensions.get('window').width;
 var data = [
       {img:"http://photo.l99.com/common/ab0/1459301431104_xdzd42.jpg",title: "用胜利回敬谩骂——国足奇迹夜后记"},
@@ -49,7 +51,9 @@ class Test extends Component {
   }
 
   onPress(item){
-    alert(item.title);
+    //alert(item.title);
+    Actions.testTip();
+
   }
 
 

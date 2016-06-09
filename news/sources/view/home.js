@@ -109,4 +109,4 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff'
   }
 });
-module.exports = Home
+module.exports = Home;
