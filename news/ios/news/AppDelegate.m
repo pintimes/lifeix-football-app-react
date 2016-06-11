@@ -20,6 +20,7 @@
 #import "UMSocialSinaSSOHandler.h"
 #import "RCTLinkingManager.h"
 #import "CodePush.h"
+#import <AVFoundation/AVFoundation.h>
 
 @implementation AppDelegate
 
@@ -63,6 +64,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+
+  //react-native-video 
+  [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryAmbient error:nil]; 
+
   // 注册umeng统计
   [self registerUMeng];
   // 注册友盟推送

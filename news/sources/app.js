@@ -18,6 +18,7 @@ import Welcome from './view/welcome';
 import Home from './view/home';
 import Detail from './view/detail';
 import Settings from './view/settings';
+import TestView from './view/testView';
 import {NavBar, NavBarModal,NavBarLeft} from './common/NavBar';
 import TestTip from './common/TestTip';
 console.disableYellowBox=true;
@@ -44,7 +45,7 @@ export default class App extends Component {
                     <Route name="detail" component={Detail} schema="withoutAnimation" title="详情"/>
                     <Route name="settings" component={Settings} />
                     <Route name="testTip" component={TestTip} schema="popup" />
-                  
+                    <Route name="testView" component={TestView} />
               </Router>
        </Provider> 
     )

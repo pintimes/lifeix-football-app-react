@@ -15,7 +15,7 @@ class Settings extends  Component {
   constructor(props) {
     super(props);
     // 数据源
-    var category = {"C-F.com中国足球":["首页", "资讯", "教练", "裁判"], "球员":["男足", "女足"], "教学":["视频教程", "模拟测试"]};
+    var category = {"C-F.com中国足球":["十二强", "资讯", "教练", "裁判"], "球员":["男足", "女足"], "教学":["视频教程", "模拟测试"]};
     var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2,
                                       sectionHeaderHasChanged: (s1, s2) => s1 !== s2});
     this.state = {
@@ -90,7 +90,9 @@ class Settings extends  Component {
           Actions.home({title:data,componentName:'player'});
         }else if(data == '资讯'){
           Actions.home({title:data,componentName:'news'});
-        }else {
+        }else if (data == '十二强') {
+          Actions.home({title:data,componentName:'topgame'});
+        } else {
           Actions.home({title:data,componentName:'test'});
         }
         

@@ -16,7 +16,7 @@ var data = [
       {img:"http://photo.l99.com/common/31/1371533509639_p3h709.jpg",title: "女足门将身高1.87米长相清秀 惊艳抢镜(图)"}];
 
 var that ;
-class Test extends Component {
+class TestList extends Component {
   constructor(props) {
     super(props);
     that =this;
@@ -90,4 +90,4 @@ var styles = StyleSheet.create({
 
 });
 
-module.exports = Test
+module.exports = TestList;

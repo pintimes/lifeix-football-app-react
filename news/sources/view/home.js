@@ -19,8 +19,9 @@ import Settings from './settings'
 import SideMenu from 'react-native-side-menu'
 import {NavBar, NavBarModal,NavBarLeft} from '../common/NavBar';
 import Content from '../components/Content';
-import Test from '../components/Test';
+import TestList from '../components/TestList';
 import Player from '../components/Player';
+import TopGame from '../components/topgame/topGameList'
 
 class Home extends Component {
         state = {
@@ -80,9 +81,11 @@ class Home extends Component {
       case 'home' || 'news':
         return <Content />;
       case 'test':
-        return <Test />;
+        return <TestList />;
       case 'player':
         return <Player />;
+      case 'topgame':
+        return <TopGame />; 
       default:
             return <Content />;
 

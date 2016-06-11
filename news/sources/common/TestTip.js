@@ -30,6 +30,7 @@ class TestTip extends React.Component {
            return;
        }
        Actions.dismiss();
+       Actions.testView();
     }
 
 }
