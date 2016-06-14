@@ -46,6 +46,9 @@ class Home extends Component {
   onBackAndroid = () => {
     const nav = this.props.navigator;
     const routers = nav.getCurrentRoutes();
+
+    console.log("------BackAndroid");
+
     if (routers.length > 1) {
       nav.pop();
       return true;

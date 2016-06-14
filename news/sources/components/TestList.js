@@ -4,7 +4,7 @@ import {
     View,
     Component,
     Text,Image,TouchableOpacity,
-    Dimensions,ScrollView
+    Dimensions,ScrollView,Platform,BackAndroid
 } from 'react-native';
 import {Actions}  from 'react-native-redux-router';
 
@@ -22,6 +22,22 @@ class TestList extends Component {
     that =this;
   }
 
+
+    componentWillMount() {
+      if (Platform.OS === 'android') {
+        BackAndroid.addEventListener('hardwareBackPress', this.onBackAndroid);
+      }
+    }
+    componentWillUnmount() {
+      if (Platform.OS === 'android') {
+        BackAndroid.removeEventListener('hardwareBackPress', this.onBackAndroid);
+      }
+    }
+    //Android back 
+    onBackAndroid = () => {
+        Actions.dismiss();
+        return false;
+    };
 
   render() {
 

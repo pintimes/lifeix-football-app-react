@@ -150,6 +150,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-video')
     compile project(':react-native-code-push')
     compile project(':react-native-umeng-push')
     compile fileTree(dir: "libs", include: ["*.jar"])

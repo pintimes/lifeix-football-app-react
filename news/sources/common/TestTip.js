@@ -1,12 +1,13 @@
 'use strict';
 
 import React ,{Component} from 'react';
-import {View, Text, StyleSheet,Dimensions,TouchableOpacity} from 'react-native';
+import {View, Text, StyleSheet,Dimensions,TouchableOpacity,Platform,BackAndroid} from 'react-native';
 var width = Dimensions.get('window').width;
 var height = Dimensions.get('window').height;
 import {Actions}  from 'react-native-redux-router';
 
 class TestTip extends React.Component {
+
     render(){
         let Actions = this.props.routes;
         return (

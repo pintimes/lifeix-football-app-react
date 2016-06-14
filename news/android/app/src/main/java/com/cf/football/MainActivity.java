@@ -1,6 +1,7 @@
 package com.cf.football;
 
 import com.facebook.react.ReactActivity;
+import com.brentvatne.react.ReactVideoPackage;
 import com.microsoft.codepush.react.CodePush;
 import com.liuchungui.react_native_umeng_push.UmengPushPackage;
 import com.facebook.react.ReactPackage;
@@ -39,6 +40,7 @@ public class MainActivity extends ReactActivity {
     protected List<ReactPackage> getPackages() {
         return Arrays.<ReactPackage>asList(
             new MainReactPackage(),
+            new ReactVideoPackage(),
             new CodePush(this.getResources().getString(R.string.reactNativeCodePush_androidDeploymentKey), this, BuildConfig.DEBUG),
             new UmengPushPackage()
         );
